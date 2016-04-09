@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/Bean/BEAN_INSTANSE.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/Code.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/Common/data/DBHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/Common/util/MathUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/ENV.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/MyAsynctask.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/fragment/tongzhiFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/build.gradle" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/demobyloader" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

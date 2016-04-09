@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+def loadProperty(name) {
+    hasProperty(name) ? "${getProperty(name)}" : ""
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '22.0.1'
+
+    defaultConfig {
+        applicationId "com.nispok.samples.snackbar"
+        minSdkVersion 16
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(loadProperty("NISPOK_RELEASE_KEYSTORE_PATH") ?: signingConfigs.debug.storeFile)
+            storePassword loadProperty("NISPOK_RELEASE_PASSWORD") ?: signingConfigs.debug.storePassword
+            keyAlias loadProperty("NISPOK_RELEASE_KEY_ALIAS") ?: signingConfigs.debug.keyAlias
+            keyPassword loadProperty("NISPOK_RELEASE_KEY_PASSWORD") ?: signingConfigs.debug.keyPassword
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            debuggable false
+        }
+    }
+
+}
+
+dependencies {
+    compile project(':lib')
+    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'com.android.support:recyclerview-v7:22.0.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.apache.maven:maven-ant-tasks:2.1.3'
+    testCompile 'org.robolectric:robolectric:2.4'
+}
