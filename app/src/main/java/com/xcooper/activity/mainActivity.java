@@ -10,6 +10,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.xcooper.Bean.BEAN_INSTANSE;
 import com.xcooper.Constant;
@@ -22,7 +24,7 @@ import com.xcooper.fragment.mainFragment;
 import com.xcooper.fragment.tongzhiFragment;
 import com.xcooper.view.RevealLayout;
 
-public class mainAcitivity extends ActionBarActivity {
+public class mainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,11 @@ public class mainAcitivity extends ActionBarActivity {
     }
 
 
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private Toolbar mToolbar;
-    private RevealLayout ll_chengyuan, ll_tongzhi, ll_renwu, ll_xiangmu;
+    public static DrawerLayout mDrawerLayout;
+    public static ActionBarDrawerToggle mDrawerToggle;
+    public static Toolbar mToolbar;
+    public static TextView title;
+    private RevealLayout ll_chengyuan, ll_tongzhi, ll_renwu, ll_xiangmu, ll_dongtai, ll_zhuxiao;
 
     /**
      * 初始化数据
@@ -52,7 +55,7 @@ public class mainAcitivity extends ActionBarActivity {
         Constant.activity.getSupportActionBar().setDisplayShowTitleEnabled(false);
         Constant.activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        loadRenWu();
+        Fragment_Center.loadRenWu();
     }
 
     /**
@@ -63,12 +66,16 @@ public class mainAcitivity extends ActionBarActivity {
         ll_tongzhi = (RevealLayout) findViewById(R.id.ll_tongzhi);
         ll_renwu = (RevealLayout) findViewById(R.id.ll_renwu);
         ll_xiangmu = (RevealLayout) findViewById(R.id.ll_xiangmu);
+        ll_dongtai = (RevealLayout) findViewById(R.id.ll_dongtai);
+        ll_zhuxiao = (RevealLayout) findViewById(R.id.ll_zhuxiao);
+
+        title = (TextView) findViewById(R.id.title);
+
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mDrawerToggle = new ActionBarDrawerToggle(Constant.activity, mDrawerLayout, mToolbar, 0, 0);
         mDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
     }
 
     /**
@@ -80,7 +87,7 @@ public class mainAcitivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 mDrawerLayout.closeDrawers();
-                loadChengyuan();
+                Fragment_Center.loadChengyuan();
             }
         });
 
@@ -88,7 +95,7 @@ public class mainAcitivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 mDrawerLayout.closeDrawers();
-                loadTongZhi();
+                Fragment_Center.loadTongZhi();
             }
         });
 
@@ -96,7 +103,7 @@ public class mainAcitivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 mDrawerLayout.closeDrawers();
-                loadRenWu();
+                Fragment_Center.loadRenWu();
             }
         });
 
@@ -104,35 +111,26 @@ public class mainAcitivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 mDrawerLayout.closeDrawers();
-                loadXiangmu();
+                Fragment_Center.loadXiangmu();
             }
         });
-    }
 
-    //成员界面
-    public void loadChengyuan() {
-        Constant.Reccent_Frag = Fragment_Center.chengyuanFragment_num;
-        Method_Center.turnToFragment(getFragmentManager(), Fragment_Center.getChengyuanFragment(), "chengyuan", null);
-    }
+        ll_dongtai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDrawerLayout.closeDrawers();
+                Fragment_Center.loadDongtai();
+            }
+        });
 
-    public void loadTongZhi() {
-        Constant.Reccent_Frag = Fragment_Center.tongzhiFragment_num;
-        Method_Center.turnToFragment(getFragmentManager(), Fragment_Center.getTongzhiFragment(), "tongzhi", null);
+        ll_zhuxiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDrawerLayout.closeDrawers();
+                Fragment_Center.loadZhuxiao();
+            }
+        });
 
-    }
-
-    public void loadXiangmu() {
-        Constant.Reccent_Frag = Fragment_Center.xiangmuFragment_num;
-        Method_Center.turnToFragment(getFragmentManager(), Fragment_Center.getXiangmuFragment(), "xiangmu", null);
-
-    }
-
-    public void loadRenWu() {
-        getSupportFragmentManager().popBackStack(null,
-                FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
-        Constant.Reccent_Frag = Fragment_Center.mainFragment_num;
-        Method_Center.turnToFragment(getFragmentManager(), Fragment_Center.getMainFragment(), "main", null);
     }
 
 
@@ -146,13 +144,24 @@ public class mainAcitivity extends ActionBarActivity {
     @Override
     public void onBackPressed() {
 
+
         if (Constant.Reccent_Frag == Fragment_Center.chengyuanFragment_num ||
                 Constant.Reccent_Frag == Fragment_Center.tongzhiFragment_num ||
-                Constant.Reccent_Frag == Fragment_Center.xiangmuFragment_num
-                ) {
+                Constant.Reccent_Frag == Fragment_Center.dongtaiFragment_num ||
+                Constant.Reccent_Frag == Fragment_Center.xiangmuFragment_num ||
+                Constant.Reccent_Frag == Fragment_Center.renwuxiangqingFragment_num) {
 //            getFragmentManager().popBackStack();
 //            Constant.Reccent_Frag = Fragment_Center.mainFragment_num;
-            loadRenWu();
+            Fragment_Center.loadRenWu();
+        } else if (Constant.Reccent_Frag == Fragment_Center.xiangmuAddFragment_num) {
+            getFragmentManager().popBackStack();
+            Constant.Reccent_Frag = Fragment_Center.xiangmuFragment_num;
+        } else if (Constant.Reccent_Frag == Fragment_Center.xiangmuMainFragment_num) {
+            getFragmentManager().popBackStack();
+            Constant.Reccent_Frag = Fragment_Center.xiangmuFragment_num;
+        } else if (Constant.Reccent_Frag == Fragment_Center.chengyuanAddFragment_num) {
+            getFragmentManager().popBackStack();
+            Constant.Reccent_Frag = Fragment_Center.xiangmuAddFragment_num;
         } else {
             Method_Center.show_Toast("Out", true);
             super.onBackPressed();

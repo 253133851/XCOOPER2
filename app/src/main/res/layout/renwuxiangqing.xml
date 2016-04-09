@@ -4,32 +4,96 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.gc.materialdesign.views.ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="@color/main_color_dark"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="订单界面开发及任务界面开发"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/main_color_dark"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="right"
+                    android:text="负责人 : 陈文琪"
+                    android:textColor="#DDFAFAFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingLeft="16dp"
+                    android:text="到期时间 : 5.10"
+                    android:textColor="#DDFAFAFF"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <com.gc.materialdesign.views.ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="订单界面开发及任务界面开发"
-                    android:textColor="@color/white"
+                    android:orientation="horizontal">
 
-                    android:textSize="24sp" />
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="需求 ："
+                        android:textColor="@color/main_color_dark"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="6dp"
+                        android:text=" 1. 我有一头小毛驴 \n 2. 我从来都不骑"
+                        android:textColor="@color/main_color_light"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -38,69 +102,117 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="24dp"
+                        android:gravity="center_vertical"
+                        android:text="检查项 ："
+                        android:textColor="@color/main_color_dark"
+                        android:textSize="18sp" />
+
+                    <TextView
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="6dp"
+                        android:text=" 1. 我有一头小毛驴 \n 2. 我从来都不骑"
+                        android:textColor="@color/main_color_light"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#66607D8B" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="任务描述 ： "
+                    android:textColor="@color/main_color_dark"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="   我是一头小毛驴，\n   我从来都不骑，\n   有一天我心血来潮，\n   骑着去赶集，\n   我手里拿着小皮鞭，\n   我心里也不急，\n   稀里哗啦稀里哗啦,\n   你是大傻逼。"
+                    android:textColor="@color/main_color_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#66607D8B" />
+
+
+                <include layout="@layout/pinglun_item" />
+
+                <include layout="@layout/pinglun_item" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
-                        android:layout_gravity="right"
-                        android:text="负责人 : 陈文琪"
-                        android:textColor="#DDFAFAFF"
-                        android:textSize="15sp" />
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text=" 3-12 18:56 蜡笔小新 编辑了 这条任务"
+                        android:textColor="@color/main_color_light" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:paddingLeft="16dp"
-                        android:text="到期时间 : 5.10"
-                        android:textColor="#DDFAFAFF"
-                        android:textSize="15sp" />
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text=" 3-11 12:56 蜡笔小新 创建了 这条任务"
+                        android:textColor="@color/main_color_light" />
                 </LinearLayout>
             </LinearLayout>
 
-            <ListView
-                android:id="@+id/lv_order_list"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"></ListView>
+
+        </com.gc.materialdesign.views.ScrollView>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/main_color_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:hint="请输入..."
+                android:shadowColor="@color/main_color_dark"
+                android:singleLine="true"
+                android:textColorHint="@color/main_color_light_alpha"
+                android:textSize="15dip" />
+
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:background="@drawable/submit_button_bg_color"
+                android:text="提交"
+                android:textColor="@color/white" />
         </LinearLayout>
-
-
-    </com.gc.materialdesign.views.ScrollView>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/main_color_dark" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="6dp"
-            android:layout_weight="1"
-            android:hint="请输入..."
-            android:shadowColor="@color/main_color_dark"
-            android:singleLine="true"
-            android:textColorHint="#AAAAAA"
-            android:textSize="15dip" />
-
-        <Button
-            android:id="@+id/bt_login"
-            android:layout_width="56dp"
-            android:layout_height="match_parent"
-            android:layout_margin="6dp"
-            android:background="@drawable/login_button_bg_color"
-            android:text="提交"
-            android:textColor="@color/white" />
     </LinearLayout>
 </LinearLayout>

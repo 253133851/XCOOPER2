@@ -73,6 +73,9 @@ public class MyFragment extends Fragment implements Fragment_Pre,Init,View.OnCli
 
     }
 
+    public void addClick(View view){
+        view.setOnClickListener(this);
+    }
 
 
     public int getLAYOUT() {

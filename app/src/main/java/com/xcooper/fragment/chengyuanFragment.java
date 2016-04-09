@@ -25,6 +25,7 @@ import com.xcooper.Constant;
 import com.xcooper.ENV;
 import com.xcooper.Method_Center;
 import com.xcooper.R;
+import com.xcooper.activity.mainActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -59,11 +60,13 @@ public class chengyuanFragment extends MyFragment {
 
     public void Init_Data() {
 
+        mainActivity.title.setText("æˆå‘˜");
+
     }
 
     public void Init_Listener() {
-        open.setOnClickListener(this);
-        open_gray.setOnClickListener(this);
+        addClick(open);
+        addClick(open_gray);
     }
 
     public void onClick(View view) {
@@ -79,7 +82,7 @@ public class chengyuanFragment extends MyFragment {
 
 
     /**
-     * Ğü¸¡°´Å¥µã»÷ÊÂ¼ş
+     * æ‚¬æµ®æŒ‰é’®ç‚¹å‡»äº‹ä»¶
      */
     public void float_button_click() {
         set_anim();
@@ -106,7 +109,7 @@ public class chengyuanFragment extends MyFragment {
         } else if (open.getTag().equals("open")) {
             alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
             alphaAnimation.setDuration(100);
-            alphaAnimation.setStartOffset(250);//Ö´ĞĞÇ°µÄµÈ´ıÊ±¼ä
+            alphaAnimation.setStartOffset(250);//æ‰§è¡Œå‰çš„ç­‰å¾…æ—¶é—´
             open_gray.setAnimation(alphaAnimation);
             alphaAnimation.startNow();
             open.startAnimation(animation_close);
@@ -142,7 +145,7 @@ public class chengyuanFragment extends MyFragment {
     }
 
     /**
-     * floatbuttonµã»÷¶¯»­
+     * floatbuttonç‚¹å‡»åŠ¨ç”»
      *
      * @param view
      * @param tips
@@ -151,22 +154,22 @@ public class chengyuanFragment extends MyFragment {
     public void start_anim(View view, View tips, long startOffset) {
         Animation animation;
         if (open.getTag().equals("close")) {
-            //³õÊ¼»¯
+            //åˆå§‹åŒ–
             animation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0);
-            //ÉèÖÃ¶¯»­Ê±¼ä
+            //è®¾ç½®åŠ¨ç”»æ—¶é—´
             view.setVisibility(View.VISIBLE);
             tips.setVisibility(View.VISIBLE);
         } else {
-            //³õÊ¼»¯
+            //åˆå§‹åŒ–
             animation = new ScaleAnimation(1.0f, 0.0f, 1.0f, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0);
-            //ÉèÖÃ¶¯»­Ê±¼ä
+            //è®¾ç½®åŠ¨ç”»æ—¶é—´
             view.setVisibility(View.GONE);
             tips.setVisibility(View.GONE);
         }
         animation.setDuration(100);
         view.setAnimation(animation);
         tips.setAnimation(animation);
-        animation.setStartOffset(startOffset);//Ö´ĞĞÇ°µÄµÈ´ıÊ±¼ä
+        animation.setStartOffset(startOffset);//æ‰§è¡Œå‰çš„ç­‰å¾…æ—¶é—´
         animation.startNow();
 
     }

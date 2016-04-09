@@ -9,11 +9,11 @@
         android:orientation="horizontal">
 
         <com.xcooper.view.CircleImg
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_gravity="center_vertical"
 
-            android:layout_margin="16dp"
+            android:layout_margin="32dp"
             android:src="@color/main_color_dark" />
 
         <TextView
@@ -24,7 +24,7 @@
             android:padding="16dp"
             android:text="项目一"
             android:textColor="@color/main_color_dark"
-            android:textSize="28sp" />
+            android:textSize="24sp" />
 
     </com.xcooper.view.RevealLayout>
 

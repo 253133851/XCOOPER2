@@ -8,7 +8,7 @@ import java.security.MessageDigest;
 
 /**
  * @author Dekn
- *         MD5¼ÓÃÜ
+ *         MD5åŠ å¯†
  */
 public class MD5 {
     private final static String[] hexDigits = {
@@ -16,10 +16,10 @@ public class MD5 {
             "8", "9", "a", "b", "c", "d", "e", "f"};
 
     /**
-     * ×ª»»×Ö½ÚÊı×éÎª16½øÖÆ×Ö´®
+     * è½¬æ¢å­—èŠ‚æ•°ç»„ä¸º16è¿›åˆ¶å­—ä¸²
      *
-     * @param b ×Ö½ÚÊı×é
-     * @return 16½øÖÆ×Ö´®
+     * @param b å­—èŠ‚æ•°ç»„
+     * @return 16è¿›åˆ¶å­—ä¸²
      */
 
     public static String byteArrayToHexString(byte[] b) {
@@ -47,14 +47,14 @@ public class MD5 {
             MessageDigest md = MessageDigest.getInstance("MD5");
             resultString = byteArrayToHexString(md.digest(resultString.getBytes()));
             /**********************************************
-             * ´òÂÒMD5ÃÜÂë£¬°ÑÔ­ÓĞ×Ö·ûÆ½·ÖËÄ·İ½øĞĞÅÅĞò			*
-             * ÅÅĞò¹æÔò¹æÔò£º2314 ¼´µÚ¶ş·İÔÚµÚÒ»Î»£¬µÚÈı·İÔÚµÚ¶şÎ» *
+             * æ‰“ä¹±MD5å¯†ç ï¼ŒæŠŠåŸæœ‰å­—ç¬¦å¹³åˆ†å››ä»½è¿›è¡Œæ’åº			*
+             * æ’åºè§„åˆ™è§„åˆ™ï¼š2314 å³ç¬¬äºŒä»½åœ¨ç¬¬ä¸€ä½ï¼Œç¬¬ä¸‰ä»½åœ¨ç¬¬äºŒä½ *
              **********************************************/
             StringBuffer sb = new StringBuffer();
-            sb.append(resultString.substring(8, 16)); //µÚ¶ş·İ
-            sb.append(resultString.substring(16, 24)); //µÚÈı·İ
-            sb.append(resultString.substring(0, 8)); //µÚÒ»·İ
-            sb.append(resultString.substring(24)); //µÚËÄ·İ
+            sb.append(resultString.substring(8, 16)); //ç¬¬äºŒä»½
+            sb.append(resultString.substring(16, 24)); //ç¬¬ä¸‰ä»½
+            sb.append(resultString.substring(0, 8)); //ç¬¬ä¸€ä»½
+            sb.append(resultString.substring(24)); //ç¬¬å››ä»½
 
             resultString = sb.toString();
         } catch (Exception ex) {

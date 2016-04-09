@@ -166,6 +166,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/chengyuan_add_test_click"
                     android:layout_width="72dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"

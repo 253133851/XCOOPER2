@@ -1,7 +1,7 @@
 package com.xcooper.Common.util;
 
 /**
- * ·şÎñÆ÷´¦Àí
+ * æœåŠ¡å™¨å¤„ç†
  * Created by pabula on 15/7/23.
  */
 public class ServerUtil {

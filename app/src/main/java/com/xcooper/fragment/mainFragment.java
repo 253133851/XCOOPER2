@@ -22,6 +22,8 @@ import com.xcooper.Constant;
 import com.xcooper.ENV;
 import com.xcooper.MyAsynctask;
 import com.xcooper.R;
+import com.xcooper.activity.mainActivity;
+import com.xcooper.view.RevealLayout;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -61,6 +63,7 @@ public class mainFragment extends MyFragment {
     private View view1, view2, view3, view4, view5;//页卡视图
     private List<View> mViewList = new ArrayList<>();//页卡视图集合
 
+    RevealLayout renwu_test_click;
 
     @Override
     public void Init_View(View view) {
@@ -81,7 +84,12 @@ public class mainFragment extends MyFragment {
         mViewPager = (ViewPager) view.findViewById(R.id.vp_view);
         mTabLayout = (TabLayout) view.findViewById(R.id.tabs);
 
+        mInflater = LayoutInflater.from(Constant.context);
+        view1 = mInflater.inflate(R.layout.wofuzede, null);
+        view2 = mInflater.inflate(R.layout.wofaqide, null);
+        view3 = mInflater.inflate(R.layout.woguanzude, null);
 
+        renwu_test_click = (RevealLayout) view1.findViewById(R.id.renwu_test_click);
 
     }
 
@@ -91,13 +99,12 @@ public class mainFragment extends MyFragment {
     @Override
     public void Init_Data() {
 
+        mainActivity.mToolbar.setVisibility(View.VISIBLE);
+        mainActivity.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+
         mViewList = new ArrayList<>();//页卡视图集合
         mTitleList = new ArrayList<>();//页卡视图集合
 
-        mInflater = LayoutInflater.from(Constant.context);
-        view1 = mInflater.inflate(R.layout.wofuzede, null);
-        view2 = mInflater.inflate(R.layout.wofaqide, null);
-        view3 = mInflater.inflate(R.layout.woguanzude, null);
 
         //添加页卡视图
         mViewList.add(view1);
@@ -119,16 +126,35 @@ public class mainFragment extends MyFragment {
         mTabLayout.setupWithViewPager(mViewPager);//将TabLayout和ViewPager关联起来。
         mTabLayout.setTabsFromPagerAdapter(mAdapter);//给Tabs设置适配器
 
+        mainActivity.title.setText("任务");
+
     }
 
     @Override
     public void Init_Listener() {
-        open.setOnClickListener(this);
-        open_gray.setOnClickListener(this);
-        shuaxin.setOnClickListener(this);
-
+        addClick(open);
+        addClick(open_gray);
+        addClick(shuaxin);
+        addClick(renwu_test_click);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.open:
+                float_button_click();
+                break;
+            case R.id.open_gray:
+                float_button_click();
+                break;
+            case R.id.shuaxin:
+                break;
+            case R.id.renwu_test_click:
+                Fragment_Center.loadRenwuXiangqing();
+                break;
+
+        }
+    }
 
     //ViewPager适配器
     class MyPagerAdapter extends PagerAdapter {
@@ -164,21 +190,6 @@ public class mainFragment extends MyFragment {
             return mTitleList.get(position);//页卡标题
         }
 
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.open:
-                float_button_click();
-                break;
-            case R.id.open_gray:
-                float_button_click();
-                break;
-            case R.id.shuaxin:
-                break;
-
-        }
     }
 
 

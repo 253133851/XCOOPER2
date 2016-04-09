@@ -1,5 +1,5 @@
 /*
- * ´´½¨ÓÚ 2004-10-25 20:06:55
+ * blåˆ›å»ºäº 2004-10-25 20:06:55
  * JCMS
  */
 package com.xcooper.Common.util;
@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 /**
  * @author Dekn
  *         <p/>
- *         ×Ö·û´®¹¤¾ßÀà
+ *         å­—ç¬¦ä¸²å·¥å…·ç±»
  *         <p/>
  *         JCMS ( Content Manager System for java )
  */
@@ -28,11 +28,11 @@ public class StrUtil {
     private static String varStr = "@";
 
     /**
-     * Ìæ»»Ä£°åÖĞµÄ×Ö·û
+     * æ›¿æ¢æ¨¡æ¿ä¸­çš„å­—ç¬¦
      *
-     * @param str        Ô­×Ö·û´®
-     * @param templetStr ÒªÌæ»»µÄÄ£°å×Ö·û
-     * @param data       Ìæ»»³ÉÊ²Ã´×Ö·û
+     * @param str        åŸå­—ç¬¦ä¸²
+     * @param templetStr è¦æ›¿æ¢çš„æ¨¡æ¿å­—ç¬¦
+     * @param data       æ›¿æ¢æˆä»€ä¹ˆå­—ç¬¦
      * @return
      */
     public static String replaceAllForTemplet(String str, String templetStr,
@@ -42,9 +42,9 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄÕûÊıÖµ£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò×Ô¶¯×ª»»Îª0
+     * å–å¾—ä¸€ä¸ªéç©ºçš„æ•´æ•°å€¼ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è‡ªåŠ¨è½¬æ¢ä¸º0
      *
-     * @param data ¡¡Òª×ª»»µÄÊı¾İ
+     * @param data ã€€è¦è½¬æ¢çš„æ•°æ®
      * @return
      */
     public static int getNotNullIntValue(String data) {
@@ -61,7 +61,7 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄÕûÊıÖµ£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò·µ»ØreturnValue
+     * å–å¾—ä¸€ä¸ªéç©ºçš„æ•´æ•°å€¼ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è¿”å›returnValue
      *
      * @param date
      * @param returnValue
@@ -76,7 +76,7 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄÊ±¼ä´Á£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÎªNULL£¬Ôò×Ô¶¯È¡µ±Ç°Ê±¼ä
+     * å–å¾—ä¸€ä¸ªéç©ºçš„æ—¶é—´æˆ³ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–ä¸ºNULLï¼Œåˆ™è‡ªåŠ¨å–å½“å‰æ—¶é—´
      *
      * @param data
      * @param dateFormat TODO
@@ -100,10 +100,10 @@ public class StrUtil {
     }
 
     /**
-     * ·µ»ØÒ»¸ö·Ç¿ÕµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª¿Õ»òÎªNULL£¬Ôò·µ»ØreturnValue
+     * è¿”å›ä¸€ä¸ªéç©ºçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸ºç©ºæˆ–ä¸ºNULLï¼Œåˆ™è¿”å›returnValue
      *
      * @param date
-     * @param returnValue Èç¹û×Ö·û´®Îª¿Õ»òÎªNULL£¬Ôò·µ»ØreturnValue
+     * @param returnValue å¦‚æœå­—ç¬¦ä¸²ä¸ºç©ºæˆ–ä¸ºNULLï¼Œåˆ™è¿”å›returnValue
      * @return
      */
     public static String getNotNullStringValue(String date, String returnValue) {
@@ -115,7 +115,7 @@ public class StrUtil {
     }
 
     /**
-     * ·µ»ØÒ»¸ö·Ç¿ÕµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª¿Õ£¬ÔòÖ±½Ó·µ»Ø¡°¡±£¨¿Õ×Ö·û£¬·Çnull)
+     * è¿”å›ä¸€ä¸ªéç©ºçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸ºç©ºï¼Œåˆ™ç›´æ¥è¿”å›â€œâ€ï¼ˆç©ºå­—ç¬¦ï¼Œénull)
      *
      * @param date
      * @return
@@ -129,7 +129,7 @@ public class StrUtil {
     }
 
     /**
-     * ÅĞ¶ÏÒ»¸ö×Ö·û´®ÊÇ²»ÊÇÊı×Ö
+     * åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯ä¸æ˜¯æ•°å­—
      *
      * @param str
      * @return
@@ -149,7 +149,7 @@ public class StrUtil {
 
 
     /**
-     * ÅĞ¶ÏÒ»¸ö×Ö·û´®ÊÇ²»ÊÇFLOATÀàĞÍµÄÊı×Ö
+     * åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯ä¸æ˜¯FLOATç±»å‹çš„æ•°å­—
      *
      * @param str
      * @return
@@ -169,7 +169,7 @@ public class StrUtil {
 
 
     /**
-     * ×Ö·ûÌæ»»º¯Êı
+     * å­—ç¬¦æ›¿æ¢å‡½æ•°
      *
      * @param source
      * @param oldString
@@ -177,11 +177,11 @@ public class StrUtil {
      * @return
      */
     public static String replaceAll(String source, String oldString, String newString) {
-        //±»Ìæ»»×Ö·ûÎª¿Õ£¬·µ»ØÔ´×Ö·û´®
+        //è¢«æ›¿æ¢å­—ç¬¦ä¸ºç©ºï¼Œè¿”å›æºå­—ç¬¦ä¸²
         if (null == oldString || oldString.equals("")) {
             return source;
         }
-        //Ô´Îª¿Õ£¬·µ»Ønull
+        //æºä¸ºç©ºï¼Œè¿”å›null
         if (isNull(source)) {
             return "";
         }
@@ -204,7 +204,7 @@ public class StrUtil {
 
 
     /**
-     * Ìæ»»ËùÓĞ¿Õ¸ñ
+     * æ›¿æ¢æ‰€æœ‰ç©ºæ ¼
      *
      * @param source
      * @return
@@ -214,7 +214,7 @@ public class StrUtil {
     }
 
     /**
-     * ¼ì²â×Ö·û´®ÊÇ·ñ·ûºÏ¹æÔò
+     * æ£€æµ‹å­—ç¬¦ä¸²æ˜¯å¦ç¬¦åˆè§„åˆ™
      *
      * @param source
      * @return
@@ -249,7 +249,7 @@ public class StrUtil {
                 source.indexOf(";") > -1 ||
                 source.indexOf(":") > -1 ||
                 source.indexOf("?") > -1 ||
-                source.indexOf("¡¡") > -1
+                source.indexOf("ã€€") > -1
                 )
 
             isOK = false;
@@ -260,9 +260,9 @@ public class StrUtil {
 
 
     /**
-     * ½«HTML½øĞĞ±àÂë£¬ÒÔ±ãÇ°Ì¨PAGE¿ÉÒÔÕı³£ÏÔÊ¾
+     * å°†HTMLè¿›è¡Œç¼–ç ï¼Œä»¥ä¾¿å‰å°PAGEå¯ä»¥æ­£å¸¸æ˜¾ç¤º
      *
-     * @param str Òª±àÂëµÄ×Ö·û´®
+     * @param str è¦ç¼–ç çš„å­—ç¬¦ä¸²
      * @return
      */
     public static String encodeHTML(String str) {
@@ -279,11 +279,11 @@ public class StrUtil {
 
 
     /**
-     * HTML½âÂë
+     * HTMLè§£ç 
      *
      * @param str
      * @return
-     * @author lala 2008-2-21 ÏÂÎç05:01:21
+     * @author lala 2008-2-21 ä¸‹åˆ05:01:21
      */
     public static String decodeHTML(String str) {
         if (isNull(str))
@@ -297,7 +297,7 @@ public class StrUtil {
     }
 
     /**
-     * ×Ö·û´®×ª»»³ÉVector,×Ö·û´®±ØĞëÒÔ¶ººÅ·Ö¸ô.
+     * å­—ç¬¦ä¸²è½¬æ¢æˆVector,å­—ç¬¦ä¸²å¿…é¡»ä»¥é€—å·åˆ†éš”.
      *
      * @param str
      * @return
@@ -322,10 +322,10 @@ public class StrUtil {
     }
 
     /**
-     * ½«Ò»¸ö×Ö·ûĞÍÊı×é£¬×ª»»ÎªÒ»¸ö×Ö·û´®
+     * å°†ä¸€ä¸ªå­—ç¬¦å‹æ•°ç»„ï¼Œè½¬æ¢ä¸ºä¸€ä¸ªå­—ç¬¦ä¸²
      *
      * @param strArray
-     * @param splitStr ×ª»»³É×Ö·û´®Ê±£¬¸÷Êı×éÔªËØÖ®¼äµÄ·Ö¸ô·û
+     * @param splitStr è½¬æ¢æˆå­—ç¬¦ä¸²æ—¶ï¼Œå„æ•°ç»„å…ƒç´ ä¹‹é—´çš„åˆ†éš”ç¬¦
      * @return
      */
     public static String strArrayToStr(String[] strArray, String splitStr) {
@@ -347,7 +347,7 @@ public class StrUtil {
 
 
     /**
-     * ½«×Ö·û´®Êı¾İ×ª»»³ÉVector
+     * å°†å­—ç¬¦ä¸²æ•°æ®è½¬æ¢æˆVector
      *
      * @param str_array
      * @return
@@ -371,7 +371,7 @@ public class StrUtil {
 
 
     /**
-     * ºÏ²¢Á½¸övector£¬×îÖÕ·µ»ØÒ»¸öĞÂµÄºÏ²¢ºóµÄvector
+     * åˆå¹¶ä¸¤ä¸ªvectorï¼Œæœ€ç»ˆè¿”å›ä¸€ä¸ªæ–°çš„åˆå¹¶åçš„vector
      *
      * @param v1
      * @param v2
@@ -388,8 +388,8 @@ public class StrUtil {
 
 
     /**
-     * ½«hashmap×ª»»³Écollection
-     * ´Ë·½·¨Ö»ÄÜ½«hashmapÖĞµÄÖµ·ÅÈëcollectionÖĞ
+     * å°†hashmapè½¬æ¢æˆcollection
+     * æ­¤æ–¹æ³•åªèƒ½å°†hashmapä¸­çš„å€¼æ”¾å…¥collectionä¸­
      *
      * @param map
      * @return
@@ -400,7 +400,7 @@ public class StrUtil {
 
 
     /**
-     * ÅĞ¶ÏÌá¹©µÄ×Ö·û´®ÊÇÎª¿Õ»òNULL
+     * åˆ¤æ–­æä¾›çš„å­—ç¬¦ä¸²æ˜¯ä¸ºç©ºæˆ–NULL
      *
      * @return
      */
@@ -414,7 +414,7 @@ public class StrUtil {
 
 
     /**
-     * ÅĞ¶ÏÌá¹©µÄ×Ö·û´®ÊÇ²»ÊÇ²»Îª¿Õ»òNULL
+     * åˆ¤æ–­æä¾›çš„å­—ç¬¦ä¸²æ˜¯ä¸æ˜¯ä¸ä¸ºç©ºæˆ–NULL
      *
      * @param str
      * @return
@@ -429,7 +429,7 @@ public class StrUtil {
 
 
     /**
-     * Ìá¹©µÄ×Ö·ûÊÇ·ñ±È½ÏÔËËã·û
+     * æä¾›çš„å­—ç¬¦æ˜¯å¦æ¯”è¾ƒè¿ç®—ç¬¦
      *
      * @param str
      * @return
@@ -450,7 +450,7 @@ public class StrUtil {
 
 
     /**
-     * È¥³ı·Ç·¨×Ö·û
+     * å»é™¤éæ³•å­—ç¬¦
      *
      * @param str
      * @return
@@ -473,7 +473,7 @@ public class StrUtil {
     }
 
     /**
-     * ³ıÍâHTML TAG
+     * é™¤å¤–HTML TAG
      *
      * @param str
      * @return
@@ -496,7 +496,7 @@ public class StrUtil {
 
 
     /**
-     * ±àÂëHTML£¬²¢È¥³ı·Ç·¨×Ö·û
+     * ç¼–ç HTMLï¼Œå¹¶å»é™¤éæ³•å­—ç¬¦
      *
      * @param str
      * @return
@@ -507,7 +507,7 @@ public class StrUtil {
     }
 
     /**
-     * ½«Ò»¸ö×Ö·û´®£¬²ğ·Ö³ÉÒ»¸öArrayList
+     * å°†ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œæ‹†åˆ†æˆä¸€ä¸ªArrayList
      *
      * @param c
      * @param str
@@ -539,7 +539,7 @@ public class StrUtil {
     }
 
     /**
-     * ½«Vector×ª»»³É°ë½Ç¶ººÅ·Ö¸ôµÄ×Ö·û´®
+     * å°†Vectorè½¬æ¢æˆåŠè§’é€—å·åˆ†éš”çš„å­—ç¬¦ä¸²
      *
      * @param v
      * @return
@@ -563,11 +563,11 @@ public class StrUtil {
 
 
     /**
-     * È¡×Ö·û´®µÄÇ°toCount¸ö×Ö·û
+     * å–å­—ç¬¦ä¸²çš„å‰toCountä¸ªå­—ç¬¦
      *
-     * @param str     ±»´¦Àí×Ö·û´®
-     * @param toCount ½ØÈ¡³¤¶È
-     * @param more    ºó×º×Ö·û´®
+     * @param str     è¢«å¤„ç†å­—ç¬¦ä¸²
+     * @param toCount æˆªå–é•¿åº¦
+     * @param more    åç¼€å­—ç¬¦ä¸²
      * @return String
      * @version 2004.11.24
      * @author zhulx
@@ -595,19 +595,19 @@ public class StrUtil {
 
 
     /**
-     * ¹¦ÄÜ£º¸ù¾İÏŞÖÆ³¤¶È½ØÈ¡×Ö·û´®£¨×Ö·û´®ÖĞ°üÀ¨ºº×Ö£¬Ò»¸öºº×ÖµÈÓÚÁ½¸ö×Ö·û£©
-     * @param strParameter Òª½ØÈ¡µÄ×Ö·û´®
-     * @param limitLength ½ØÈ¡µÄ³¤¶È
-     * @return ½ØÈ¡ºóµÄ×Ö·û´®
+     * åŠŸèƒ½ï¼šæ ¹æ®é™åˆ¶é•¿åº¦æˆªå–å­—ç¬¦ä¸²ï¼ˆå­—ç¬¦ä¸²ä¸­åŒ…æ‹¬æ±‰å­—ï¼Œä¸€ä¸ªæ±‰å­—ç­‰äºä¸¤ä¸ªå­—ç¬¦ï¼‰
+     * @param strParameter è¦æˆªå–çš„å­—ç¬¦ä¸²
+     * @param limitLength æˆªå–çš„é•¿åº¦
+     * @return æˆªå–åçš„å­—ç¬¦ä¸²
      */
 
 
     /**
-     * È¡µÃÒ»¸ö×Ö·û´®µÄ³¤¶È£¨°´×Ö½Ú£©
+     * å–å¾—ä¸€ä¸ªå­—ç¬¦ä¸²çš„é•¿åº¦ï¼ˆæŒ‰å­—èŠ‚ï¼‰
      *
      * @param str
      * @return
-     * @author dekn   2007-9-20 ÏÂÎç09:59:11
+     * @author dekn   2007-9-20 ä¸‹åˆ09:59:11
      */
     public static int getLength(String str) {
         int length = str.length();
@@ -623,12 +623,12 @@ public class StrUtil {
     }
 
     /**
-     * ÅĞ¶ÏÄ³¸ö×Ö·û´®£¬ÊÇ·ñÔÚ×Ö·ûÊı×éÖĞ£¬²»Çø·Ö´óĞ¡Ğ´
+     * åˆ¤æ–­æŸä¸ªå­—ç¬¦ä¸²ï¼Œæ˜¯å¦åœ¨å­—ç¬¦æ•°ç»„ä¸­ï¼Œä¸åŒºåˆ†å¤§å°å†™
      *
      * @param array
      * @param str
      * @return
-     * @author dekn   2007-10-26 ÉÏÎç12:07:25
+     * @author dekn   2007-10-26 ä¸Šåˆ12:07:25
      */
     public static boolean isHasInArray(String[] array, String str) {
         boolean is = false;
@@ -643,11 +643,11 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃhashMapÖĞkeyµÄ×éºÏ×Ö·û´®£¬ÒÔ,·Ö¸ô
+     * å–å¾—hashMapä¸­keyçš„ç»„åˆå­—ç¬¦ä¸²ï¼Œä»¥,åˆ†éš”
      *
      * @param map
      * @return
-     * @author dekn   2008-6-6 ÉÏÎç10:36:25
+     * @author dekn   2008-6-6 ä¸Šåˆ10:36:25
      */
     public static String getMapKeyStr(HashMap map) {
         Iterator it = map.keySet().iterator();
@@ -666,11 +666,11 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃhashMapÖĞvalueµÄ×éºÏ×Ö·û´®£¬ÒÔ,·Ö¸ô
+     * å–å¾—hashMapä¸­valueçš„ç»„åˆå­—ç¬¦ä¸²ï¼Œä»¥,åˆ†éš”
      *
      * @param map
      * @return
-     * @author dekn   2008-6-6 ÉÏÎç10:36:25
+     * @author dekn   2008-6-6 ä¸Šåˆ10:36:25
      */
     public static String getMapValueStr(HashMap map) {
         Iterator it = map.values().iterator();
@@ -690,11 +690,11 @@ public class StrUtil {
 
 
     /**
-     * ×ªÒåsqlÖĞµÄ¹Ø¼ü×Ö
+     * è½¬ä¹‰sqlä¸­çš„å…³é”®å­—
      *
      * @param str
      * @return
-     * @author dekn   2008-11-13 ÏÂÎç07:03:51
+     * @author dekn   2008-11-13 ä¸‹åˆ07:03:51
      */
     public static String encodeSqlStr(String str) {
         if (isNull(str))
@@ -702,18 +702,18 @@ public class StrUtil {
 
         String s = str;
 
-        s = replaceAll(s, "'", "\\'");    //½«'×ªÒå³É\'
+        s = replaceAll(s, "'", "\\'");    //å°†'è½¬ä¹‰æˆ\'
 
         return s;
     }
 
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÖĞÊÇ·ñº¬ÓĞÖĞÎÄ
+     * åˆ¤æ–­å­—ç¬¦ä¸²ä¸­æ˜¯å¦å«æœ‰ä¸­æ–‡
      *
      * @param source
      * @return
-     * @author lala 2009-8-17 ÏÂÎç02:13:11
+     * @author lala 2009-8-17 ä¸‹åˆ02:13:11
      */
     public static boolean isChinese(String source) {
         boolean retPar = false;
@@ -731,9 +731,9 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄ¸¡µãÊı£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò×Ô¶¯×ª»»Îª0.00
+     * å–å¾—ä¸€ä¸ªéç©ºçš„æµ®ç‚¹æ•°ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è‡ªåŠ¨è½¬æ¢ä¸º0.00
      *
-     * @param data ¡¡Òª×ª»»µÄÊı¾İ
+     * @param data ã€€è¦è½¬æ¢çš„æ•°æ®
      * @return
      */
     public static float getNotNullFloatValue(String data) {
@@ -747,7 +747,7 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄ¸¡µãÊı£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò·µ»ØreturnValue
+     * å–å¾—ä¸€ä¸ªéç©ºçš„æµ®ç‚¹æ•°ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è¿”å›returnValue
      *
      * @param date
      * @param returnValue
@@ -762,7 +762,7 @@ public class StrUtil {
     }
 
     /**
-     * Èç¹û²ÎÊıÎªnull,·µ»Ø" "
+     * å¦‚æœå‚æ•°ä¸ºnull,è¿”å›" "
      *
      * @return
      */
@@ -775,9 +775,9 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄ¸¡µãÊı£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò×Ô¶¯×ª»»Îª0.00
+     * å–å¾—ä¸€ä¸ªéç©ºçš„æµ®ç‚¹æ•°ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è‡ªåŠ¨è½¬æ¢ä¸º0.00
      *
-     * @param data ¡¡Òª×ª»»µÄÊı¾İ
+     * @param data ã€€è¦è½¬æ¢çš„æ•°æ®
      * @return
      */
     public static double getNotNullDoubleValue(String data) {
@@ -791,7 +791,7 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄ¸¡µãÊı£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò·µ»ØreturnValue
+     * å–å¾—ä¸€ä¸ªéç©ºçš„æµ®ç‚¹æ•°ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è¿”å›returnValue
      *
      * @param date
      * @param returnValue
@@ -806,14 +806,14 @@ public class StrUtil {
     }
 
     /***
-     * È¡Ä¿±êSTRÖ¸¶¨¿ªÊ¼×Ö·û´®Óë½áÊø×Ö·û´®ÖĞ¼äµÄ×Ö·û´®
+     * å–ç›®æ ‡STRæŒ‡å®šå¼€å§‹å­—ç¬¦ä¸²ä¸ç»“æŸå­—ç¬¦ä¸²ä¸­é—´çš„å­—ç¬¦ä¸²
      *
      * @param targetStr
      * @param startStr
-     * @param endStr    ¿ÉÎª"",Îª""±íÊ¾½ØÈ¡´ÓstartStrÒÔºóµÄËùÓĞ×Ö·û´®
-     * @param isBlur    ÊÇ·ñÊ¹ÓÃÄ£ºı½ØÈ¡
+     * @param endStr    å¯ä¸º"",ä¸º""è¡¨ç¤ºæˆªå–ä»startSträ»¥åçš„æ‰€æœ‰å­—ç¬¦ä¸²
+     * @param isBlur    æ˜¯å¦ä½¿ç”¨æ¨¡ç³Šæˆªå–
      * @return
-     * @author lala 2008-10-24 ÏÂÎç03:50:09
+     * @author lala 2008-10-24 ä¸‹åˆ03:50:09
      */
     public static String getMiddleStr(String targetStr, String startStr, String endStr, boolean isBlur) {
         String returnStr = targetStr;
@@ -828,15 +828,15 @@ public class StrUtil {
 
         if (isBlur == false) {
             /***************************************************
-             * 				¾«È·½ØÈ¡							   *
+             * 				ç²¾ç¡®æˆªå–							   *
              ***************************************************/
             if (startIndex < 0 || endIndex < 0) {
                 return "";
             }
 
-            //È·±£½áÊø×Ö·ûÒ»¶¨ÔÚ¿ªÊ¼×Ö·ûÖ®ºó
+            //ç¡®ä¿ç»“æŸå­—ç¬¦ä¸€å®šåœ¨å¼€å§‹å­—ç¬¦ä¹‹å
             if (startIndex > endIndex) {
-                returnStr = returnStr.substring(startIndex + startStr.length(), returnStr.length());//ÏÈ´Ó¿ªÊ¼µÄµØ·½½ØÈ¡
+                returnStr = returnStr.substring(startIndex + startStr.length(), returnStr.length());//å…ˆä»å¼€å§‹çš„åœ°æ–¹æˆªå–
                 endIndex = returnStr.indexOf(endStr);
                 if (endIndex < 0)
                     return "";
@@ -847,13 +847,13 @@ public class StrUtil {
         } else {
 
             /***************************************************
-             * 				Ä£ºı½ØÈ¡							   *
+             * 				æ¨¡ç³Šæˆªå–							   *
              ***************************************************/
             if (startIndex > endIndex) {
                 return "";
             }
             if (startIndex > -1)
-                returnStr = returnStr.substring(startIndex + startStr.length(), returnStr.length());//ÏÈ´Ó¿ªÊ¼µÄµØ·½½ØÈ¡
+                returnStr = returnStr.substring(startIndex + startStr.length(), returnStr.length());//å…ˆä»å¼€å§‹çš„åœ°æ–¹æˆªå–
             if (endIndex > -1)
                 returnStr = returnStr.substring(0, endIndex);
         }
@@ -863,23 +863,23 @@ public class StrUtil {
     }
 
     /***
-     * ¾«È·½ØÈ¡
-     * È¡Ä¿±êSTRÖ¸¶¨¿ªÊ¼×Ö·û´®Óë½áÊø×Ö·û´®ÖĞ¼äµÄ×Ö·û´®
+     * ç²¾ç¡®æˆªå–
+     * å–ç›®æ ‡STRæŒ‡å®šå¼€å§‹å­—ç¬¦ä¸²ä¸ç»“æŸå­—ç¬¦ä¸²ä¸­é—´çš„å­—ç¬¦ä¸²
      *
      * @param targetStr
      * @param startStr
-     * @param endStr    ¿ÉÎª"",Îª""±íÊ¾½ØÈ¡´ÓstartStrÒÔºóµÄËùÓĞ×Ö·û´®
+     * @param endStr    å¯ä¸º"",ä¸º""è¡¨ç¤ºæˆªå–ä»startSträ»¥åçš„æ‰€æœ‰å­—ç¬¦ä¸²
      * @return
-     * @author lala 2008-10-24 ÏÂÎç03:50:09
+     * @author lala 2008-10-24 ä¸‹åˆ03:50:09
      */
     public static String getMiddleStr(String targetStr, String startStr, String endStr) {
         return getMiddleStr(targetStr, startStr, endStr, false);
     }
 
     /**
-     * È¡µÃhashMapÖĞvalueµÄ×éºÏ×Ö·û´®£¬ÒÔ'·Ö¸ô
-     * ÕâÊÇ×¨ÃÅÎªÀ©Õ¹×Ö¶ÎMAPÌá¹©µÄ·½·¨£¬·ñÔòÀ©Õ¹×Ö¶ÎÖĞ³öÏÖÓ¢ÎÄ¶ººÅµÄ
-     * »°»á½«Ò»ÌõÊı¾İ·Ö³ÉÁ½ÌõÊı¾İ
+     * å–å¾—hashMapä¸­valueçš„ç»„åˆå­—ç¬¦ä¸²ï¼Œä»¥'åˆ†éš”
+     * è¿™æ˜¯ä¸“é—¨ä¸ºæ‰©å±•å­—æ®µMAPæä¾›çš„æ–¹æ³•ï¼Œå¦åˆ™æ‰©å±•å­—æ®µä¸­å‡ºç°è‹±æ–‡é€—å·çš„
+     * è¯ä¼šå°†ä¸€æ¡æ•°æ®åˆ†æˆä¸¤æ¡æ•°æ®
      *
      * @param map
      * @return
@@ -901,9 +901,9 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄ³¤ÕûÊı£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò×Ô¶¯×ª»»Îª0
+     * å–å¾—ä¸€ä¸ªéç©ºçš„é•¿æ•´æ•°ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è‡ªåŠ¨è½¬æ¢ä¸º0
      *
-     * @param data ¡¡Òª×ª»»µÄÊı¾İ
+     * @param data ã€€è¦è½¬æ¢çš„æ•°æ®
      * @return
      */
     public static long getNotNullLongValue(String data) {
@@ -917,7 +917,7 @@ public class StrUtil {
     }
 
     /**
-     * È¡µÃÒ»¸ö·Ç¿ÕµÄ³¤ÕûÊıÊı£¬Èç¹ûÌá¹©µÄÊı¾İÎª¿Õ»òÕßÎª×ÖÄ¸£¬Ôò·µ»ØreturnValue
+     * å–å¾—ä¸€ä¸ªéç©ºçš„é•¿æ•´æ•°æ•°ï¼Œå¦‚æœæä¾›çš„æ•°æ®ä¸ºç©ºæˆ–è€…ä¸ºå­—æ¯ï¼Œåˆ™è¿”å›returnValue
      *
      * @param date
      * @param returnValue
@@ -932,12 +932,12 @@ public class StrUtil {
     }
 
     /**
-     * ¶ÔĞÎÈç%D6%D0%B9%FA×Ö·û½âÂë
+     * å¯¹å½¢å¦‚%D6%D0%B9%FAå­—ç¬¦è§£ç 
      *
      * @param target
      * @param enc
      * @return
-     * @author lala 2009-12-31 ÏÂÎç03:25:17
+     * @author lala 2009-12-31 ä¸‹åˆ03:25:17
      */
     public static String decodeURI(String target, String enc) {
 
@@ -954,11 +954,11 @@ public class StrUtil {
     }
 
     /**
-     * ½«Ò»¸ö×Ö·ûĞÍµÄCollection×ª»»ÎªÒ»¸ö×Ö·û´®
+     * å°†ä¸€ä¸ªå­—ç¬¦å‹çš„Collectionè½¬æ¢ä¸ºä¸€ä¸ªå­—ç¬¦ä¸²
      *
      * @param splitStr
      * @return
-     * @author dekn  2011-8-29 ÏÂÎç02:35:25
+     * @author dekn  2011-8-29 ä¸‹åˆ02:35:25
      */
     public static String strCollToStr(Collection strCollection, String splitStr) {
         String str = "";
@@ -989,10 +989,10 @@ public class StrUtil {
 
 
     /**
-     * ÔÚÊı×Ö×Ö·ûµÄÇ°Ãæ×Ô¶¯²¹0 ÀıÈç100.69 ×ª»»ºóÊÇ00000000010069 100£¬×ª»»ºóÊÇ00000000010000
+     * åœ¨æ•°å­—å­—ç¬¦çš„å‰é¢è‡ªåŠ¨è¡¥0 ä¾‹å¦‚100.69 è½¬æ¢åæ˜¯00000000010069 100ï¼Œè½¬æ¢åæ˜¯00000000010000
      *
      * @param value
-     * @param length ²¹0ºóµÄÕûÊıÎ»³¤¶È
+     * @param length è¡¥0åçš„æ•´æ•°ä½é•¿åº¦
      * @return
      */
     public static String addZeroAtNumHead(String value, int length) {
@@ -1000,36 +1000,36 @@ public class StrUtil {
             return "";
         }
 
-        int intLength = value.indexOf(".");    //ÕûÊıÎ»µÄ³¤¶È
-        //Èç¹ûÊÇ¸¡µãĞÍÊıÖµ Èç90.00¾Í×ª»¯Îª000000090.00£¬Ğ¡ÓÚ1µÄĞ¡ÊıÖ±½Ó·µ»Ø
+        int intLength = value.indexOf(".");    //æ•´æ•°ä½çš„é•¿åº¦
+        //å¦‚æœæ˜¯æµ®ç‚¹å‹æ•°å€¼ å¦‚90.00å°±è½¬åŒ–ä¸º000000090.00ï¼Œå°äº1çš„å°æ•°ç›´æ¥è¿”å›
         if (intLength > 0) {
-            String str1 = value.substring(0, intLength);    //ÕûÊı²¿·Ö
+            String str1 = value.substring(0, intLength);    //æ•´æ•°éƒ¨åˆ†
 
-            String str2 = value.substring(intLength + 1);//Ğ¡Êı²¿·Ö
+            String str2 = value.substring(intLength + 1);//å°æ•°éƒ¨åˆ†
 
             /**
-             * Ğ¡ÊıÎ»µÄ´¦Àí
-             * ²»Ö±½Ó³ËÒÔ100´¦ÀíÊÇÎªÁË²»Ó°ÏìvalueµÄ×î´óÖµ¡­¡­
+             * å°æ•°ä½çš„å¤„ç†
+             * ä¸ç›´æ¥ä¹˜ä»¥100å¤„ç†æ˜¯ä¸ºäº†ä¸å½±å“valueçš„æœ€å¤§å€¼â€¦â€¦
              */
-            //Èç¹ûstr2ÊÇ¿Õ ¸³ÖµÎª00
+            //å¦‚æœstr2æ˜¯ç©º èµ‹å€¼ä¸º00
             if (isNull(str2)) {
                 str2 = "00";
             }
-            //Èç¹ûÊÇ1Î»Ğ¡Êı ÔòÔÚ°Ù·ÖÎ»ÉÏ²¹0
+            //å¦‚æœæ˜¯1ä½å°æ•° åˆ™åœ¨ç™¾åˆ†ä½ä¸Šè¡¥0
             if (str2.length() == 1) {
                 str2 = str2.substring(0, 1) + "0";
-                //´óÓÚµÈÓÚÁ½Î»Ğ¡ÊıµÄ£¬Ö»È¡Ç°Á½Î»
+                //å¤§äºç­‰äºä¸¤ä½å°æ•°çš„ï¼Œåªå–å‰ä¸¤ä½
             } else {
                 str2 = str2.substring(0, 2);
             }
 
             /**
-             * ÕûÊıÎ»µÄ´¦Àí
+             * æ•´æ•°ä½çš„å¤„ç†
              */
-            //Èç¹ûÕûÊı²¿·ÖµÄ³¤¶È´óÓÚĞèÒªµÄ³¤¶È£¬ÔòÖ±½Ó·µ»Ø
+            //å¦‚æœæ•´æ•°éƒ¨åˆ†çš„é•¿åº¦å¤§äºéœ€è¦çš„é•¿åº¦ï¼Œåˆ™ç›´æ¥è¿”å›
             if (length < intLength) {
                 return value;
-                //ÔÚÕûÊıÎ»Ç°Ãæ²¹0£¬ÔÙ¼ÓÉÏÔ­À´µÄĞ¡ÊıÎ»ºó·µ»Ø
+                //åœ¨æ•´æ•°ä½å‰é¢è¡¥0ï¼Œå†åŠ ä¸ŠåŸæ¥çš„å°æ•°ä½åè¿”å›
             } else {
                 int cha = length - intLength;
                 String zero = "";
@@ -1038,9 +1038,9 @@ public class StrUtil {
                 }
                 return zero + str1 + str2;
             }
-            //ÕûĞÎµÄÊıÖµ
+            //æ•´å½¢çš„æ•°å€¼
         } else {
-            int valueLength = value.length();    //Êı×ÖµÄ³¤¶È
+            int valueLength = value.length();    //æ•°å­—çš„é•¿åº¦
             if (length < valueLength) {
                 return value;
             }
@@ -1056,7 +1056,7 @@ public class StrUtil {
 
 
     /**
-     * ¸ø×Ö·û´®Ìí¼ÓĞ¡Êıµã ¾«È·µ½Ğ¡ÊıµãºóÃæÁ½Î»
+     * ç»™å­—ç¬¦ä¸²æ·»åŠ å°æ•°ç‚¹ ç²¾ç¡®åˆ°å°æ•°ç‚¹åé¢ä¸¤ä½
      *
      * @param value
      * @return
@@ -1067,10 +1067,10 @@ public class StrUtil {
 
 
     /**
-     * °´ÕÕ¾«¶È¸ø×Ö·û´®Ìí¼ÓĞ¡Êıµã
+     * æŒ‰ç…§ç²¾åº¦ç»™å­—ç¬¦ä¸²æ·»åŠ å°æ•°ç‚¹
      *
      * @param value
-     * @param jd    ¾«¶È
+     * @param jd    ç²¾åº¦
      * @return
      */
     public static String addPoint(String value, int jd) {
@@ -1088,7 +1088,7 @@ public class StrUtil {
             return value;
         }
 
-        //°´ÕÕ¾«¶È£¬Ìí¼ÓĞ¡Êıµã
+        //æŒ‰ç…§ç²¾åº¦ï¼Œæ·»åŠ å°æ•°ç‚¹
         String returnStr = value.substring(0, length - jd) + "." + value.substring(length - jd);
 
         return returnStr;
@@ -1096,7 +1096,7 @@ public class StrUtil {
 
 
     /**
-     * ÃÜÂëµÄ´¦Àí
+     * å¯†ç çš„å¤„ç†
      */
     public static String getMD5Password(String psw_forMD5,long time) {
         return MD5.MD5Encode(psw_forMD5 + time);
