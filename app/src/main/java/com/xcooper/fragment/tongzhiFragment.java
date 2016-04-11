@@ -18,8 +18,10 @@ import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
 import com.xcooper.Constant;
+import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
+import com.xcooper.adapter.MyViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +70,7 @@ public class tongzhiFragment extends MyFragment {
 
     public void Init_Data() {
 
-        mainActivity.title.setText("任务通知");
+        setTitle("任务通知");
 
         mViewList = new ArrayList<>();//页卡视图集合
         mTitleList = new ArrayList<>();//页卡视图集合
@@ -89,7 +91,7 @@ public class tongzhiFragment extends MyFragment {
         mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(0)));//添加tab选项卡
         mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(1)));
 
-        MyPagerAdapter mAdapter = new MyPagerAdapter(mViewList);
+        MyViewPagerAdapter mAdapter = new MyViewPagerAdapter(mViewList, mTitleList);
         mViewPager.setAdapter(mAdapter);//给ViewPager设置适配器
         mTabLayout.setupWithViewPager(mViewPager);//将TabLayout和ViewPager关联起来。
         mTabLayout.setTabsFromPagerAdapter(mAdapter);//给Tabs设置适配器
@@ -99,41 +101,6 @@ public class tongzhiFragment extends MyFragment {
         addClick(open);
     }
 
-    //ViewPager适配器
-    class MyPagerAdapter extends PagerAdapter {
-        private List<View> mViewList;
-
-        public MyPagerAdapter(List<View> mViewList) {
-            this.mViewList = mViewList;
-        }
-
-        @Override
-        public int getCount() {
-            return mViewList.size();//页卡数
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;//官方推荐写法
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(mViewList.get(position));//添加页卡
-            return mViewList.get(position);
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(mViewList.get(position));//删除页卡
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mTitleList.get(position);//页卡标题
-        }
-
-    }
 
     public void onClick(View view) {
         switch (view.getId()) {

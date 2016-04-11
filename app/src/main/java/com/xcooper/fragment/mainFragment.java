@@ -20,9 +20,11 @@ import android.widget.TextView;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.xcooper.Constant;
 import com.xcooper.ENV;
+import com.xcooper.Method_Center;
 import com.xcooper.MyAsynctask;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
+import com.xcooper.adapter.MyViewPagerAdapter;
 import com.xcooper.view.RevealLayout;
 
 import net.sf.json.JSONArray;
@@ -99,7 +101,7 @@ public class mainFragment extends MyFragment {
     @Override
     public void Init_Data() {
 
-        mainActivity.mToolbar.setVisibility(View.VISIBLE);
+        setTitle("任务");
         mainActivity.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
 
         mViewList = new ArrayList<>();//页卡视图集合
@@ -121,12 +123,10 @@ public class mainFragment extends MyFragment {
         mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(1)));
         mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(2)));
 
-        MyPagerAdapter mAdapter = new MyPagerAdapter(mViewList);
+        MyViewPagerAdapter mAdapter = new MyViewPagerAdapter(mViewList, mTitleList);
         mViewPager.setAdapter(mAdapter);//给ViewPager设置适配器
         mTabLayout.setupWithViewPager(mViewPager);//将TabLayout和ViewPager关联起来。
         mTabLayout.setTabsFromPagerAdapter(mAdapter);//给Tabs设置适配器
-
-        mainActivity.title.setText("任务");
 
     }
 
@@ -154,42 +154,6 @@ public class mainFragment extends MyFragment {
                 break;
 
         }
-    }
-
-    //ViewPager适配器
-    class MyPagerAdapter extends PagerAdapter {
-        private List<View> mViewList;
-
-        public MyPagerAdapter(List<View> mViewList) {
-            this.mViewList = mViewList;
-        }
-
-        @Override
-        public int getCount() {
-            return mViewList.size();//页卡数
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;//官方推荐写法
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(mViewList.get(position));//添加页卡
-            return mViewList.get(position);
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView(mViewList.get(position));//删除页卡
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mTitleList.get(position);//页卡标题
-        }
-
     }
 
 

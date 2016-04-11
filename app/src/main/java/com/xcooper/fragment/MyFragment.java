@@ -7,12 +7,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.xcooper.Method_Center;
+
 /**
  * 重写的Fragment类  自定义需要的内容
  */
-public class MyFragment extends Fragment implements Fragment_Pre,Init,View.OnClickListener {
+public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnClickListener {
 
-    int LAYOUT ;
+    int LAYOUT;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,7 +75,7 @@ public class MyFragment extends Fragment implements Fragment_Pre,Init,View.OnCli
 
     }
 
-    public void addClick(View view){
+    public void addClick(View view) {
         view.setOnClickListener(this);
     }
 
@@ -89,6 +91,11 @@ public class MyFragment extends Fragment implements Fragment_Pre,Init,View.OnCli
     public void onClick(View view) {
 
     }
+
+    public void setTitle(String name) {
+        Method_Center.setToolBarName(name);
+    }
+
 }
 
 /**
@@ -103,7 +110,7 @@ interface Fragment_Pre {
 /**
  * 用于规范化Fragment的代码
  */
-interface  Init {
+interface Init {
 
     void Init_View(View view);
 

@@ -2,6 +2,7 @@ package com.xcooper.fragment;
 
 import android.view.View;
 
+import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
 
@@ -18,7 +19,7 @@ public class renwuxiangqingFragment extends MyFragment {
     }
 
     public void Init_View(View view) {
-
+        setTitle(null);
     }
 
     public void Init_Data() {

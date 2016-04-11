@@ -2,13 +2,14 @@ package com.xcooper.fragment;
 
 import android.view.View;
 
+import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
 
 /**
  * Created by hh on 2016.4.9.
  */
-public class chengyuanAddFragment  extends MyFragment {
+public class chengyuanAddFragment extends MyFragment {
 
 
     public static chengyuanAddFragment Fragment;
@@ -23,9 +24,7 @@ public class chengyuanAddFragment  extends MyFragment {
     }
 
     public void Init_Data() {
-
-        mainActivity.title.setText("添加成员");
-
+        setTitle("添加成员");
     }
 
     public void onClick(View view) {

@@ -59,9 +59,7 @@ public class chengyuanFragment extends MyFragment {
     }
 
     public void Init_Data() {
-
-        mainActivity.title.setText("成员");
-
+        setTitle("成员");
     }
 
     public void Init_Listener() {

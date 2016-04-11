@@ -40,7 +40,7 @@ public class loginFragment extends MyFragment {
     }
 
     public void Init_Data() {
-        mainActivity.mToolbar.setVisibility(View.GONE);
+        setTitle(null);
         mainActivity.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         sp = Constant.context.getSharedPreferences("userInfo", 0);
     }

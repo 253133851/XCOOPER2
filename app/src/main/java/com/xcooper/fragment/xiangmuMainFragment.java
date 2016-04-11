@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
 import com.xcooper.Constant;
+import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
 
@@ -68,7 +69,7 @@ public class xiangmuMainFragment extends MyFragment {
 
     public void Init_Data() {
 
-        mainActivity.title.setText("项目");
+        setTitle("项目");
 
         mViewList = new ArrayList<>();//页卡视图集合
         mTitleList = new ArrayList<>();//页卡视图集合

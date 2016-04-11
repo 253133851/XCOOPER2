@@ -2,6 +2,7 @@ package com.xcooper.fragment;
 
 import android.view.View;
 
+import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
 
@@ -23,8 +24,7 @@ public class dongtaiFragment extends MyFragment {
     }
 
     public void Init_Data() {
-
-        mainActivity.title.setText("动态");
+        setTitle("动态");
 
     }
 

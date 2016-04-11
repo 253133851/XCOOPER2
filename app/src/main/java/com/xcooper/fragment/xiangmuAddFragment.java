@@ -32,7 +32,7 @@ public class xiangmuAddFragment extends MyFragment {
     }
 
     public void Init_Data() {
-        mainActivity.title.setText("新增项目");
+        setTitle("新增项目");
     }
 
     public void onClick(View view) {

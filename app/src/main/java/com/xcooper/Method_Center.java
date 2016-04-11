@@ -6,10 +6,12 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.listeners.ActionClickListener;
+import com.xcooper.activity.mainActivity;
 import com.xcooper.fragment.MyFragment;
 
 public class Method_Center {
@@ -84,6 +86,21 @@ public class Method_Center {
         ft.addToBackStack(tag);
         ft.commitAllowingStateLoss();
     }
+
+    /**
+     * 设置toolbar名称
+     * null则隐藏toolbar
+     * @param name
+     */
+    public static void setToolBarName(String name) {
+        if (null != name && !("").equals(name)) {
+            mainActivity.mToolbar.setVisibility(View.VISIBLE);
+            mainActivity.title.setText("name");
+        } else {
+            mainActivity.mToolbar.setVisibility(View.GONE);
+        }
+    }
+
 
 }
 

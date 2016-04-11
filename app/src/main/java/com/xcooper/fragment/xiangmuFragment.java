@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.gc.materialdesign.views.ButtonFloat;
+import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
 
@@ -29,7 +30,7 @@ public class xiangmuFragment extends MyFragment {
     }
 
     public void Init_Data() {
-        mainActivity.title.setText("项目列表");
+        setTitle("项目列表");
     }
 
     public void Init_Listener() {
