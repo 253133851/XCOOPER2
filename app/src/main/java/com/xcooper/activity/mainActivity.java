@@ -8,11 +8,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.gc.materialdesign.widgets.Dialog;
 import com.xcooper.Bean.BEAN_INSTANSE;
 import com.xcooper.Constant;
 import com.xcooper.Method_Center;
@@ -54,6 +56,7 @@ public class mainActivity extends ActionBarActivity {
         Constant.activity.setSupportActionBar(mToolbar);
         Constant.activity.getSupportActionBar().setDisplayShowTitleEnabled(false);
         Constant.activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Constant.activity.getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
 
         Fragment_Center.loadRenWu();
     }
@@ -76,12 +79,23 @@ public class mainActivity extends ActionBarActivity {
         mDrawerToggle = new ActionBarDrawerToggle(Constant.activity, mDrawerLayout, mToolbar, 0, 0);
         mDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+
     }
 
     /**
      * 初始化监听器
      */
     private void initListeners() {
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
+                    mDrawerLayout.closeDrawers();
+                } else {
+                    mDrawerLayout.openDrawer(Gravity.LEFT);
+                }
+            }
+        });
 
         ll_chengyuan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,7 +177,7 @@ public class mainActivity extends ActionBarActivity {
             getFragmentManager().popBackStack();
             Constant.Reccent_Frag = Fragment_Center.xiangmuAddFragment_num;
         } else if (Constant.Reccent_Frag == Fragment_Center.renwuxinjianFragment_num) {
-            System.out.println("from "+Fragment_Center.getRenwuxinjianFragment().getFROM());
+            System.out.println("from " + Fragment_Center.getRenwuxinjianFragment().getFROM());
             if (Fragment_Center.getRenwuxinjianFragment().getFROM() == Fragment_Center.mainFragment_num) {
                 Fragment_Center.loadRenWu();
             } else {

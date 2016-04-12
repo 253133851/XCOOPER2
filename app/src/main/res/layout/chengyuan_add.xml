@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_chengyuanAdd"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:visibility="gone"
+    android:background="#77000000"
+    android:paddingBottom="70dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingTop="100dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="@color/white"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color_dark"
+            android:padding="12dp"
+            android:text="添加成员"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -33,13 +48,19 @@
             </LinearLayout>
         </ScrollView>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_color_light" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="56dp"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="12dp">
 
             <TextView
+                android:id="@+id/tv_chengyuan_Add"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="16dp"
@@ -61,4 +82,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
