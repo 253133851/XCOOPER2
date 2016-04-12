@@ -1,6 +1,7 @@
 package com.xcooper.fragment;
 
 import android.app.FragmentManager;
+import android.os.Bundle;
 
 import com.xcooper.Constant;
 import com.xcooper.Method_Center;
@@ -20,59 +21,65 @@ public class Fragment_Center {
     public static int xiangmuAddFragment_num = 7;       //主页面
     public static int xiangmuMainFragment_num = 8;
     public static int chengyuanAddFragment_num = 9;
+    public static int renwuxinjianFragment_num = 10;
 
     //成员界面
     public static void loadChengyuan() {
         Constant.Reccent_Frag = Fragment_Center.chengyuanFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getChengyuanFragment(), "chengyuan", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getChengyuanFragment(), "chengyuan", null, 0);
     }
 
     public static void loadTongZhi() {
         Constant.Reccent_Frag = Fragment_Center.tongzhiFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getTongzhiFragment(), "tongzhi", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getTongzhiFragment(), "tongzhi", null, 0);
 
     }
 
     public static void loadXiangmu() {
         Constant.Reccent_Frag = Fragment_Center.xiangmuFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getXiangmuFragment(), "xiangmu", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getXiangmuFragment(), "xiangmu", null, 0);
     }
 
     public static void loadRenWu() {
         Constant.activity.getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         Constant.Reccent_Frag = Fragment_Center.mainFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getMainFragment(), "main", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getMainFragment(), "main", null, 0);
     }
 
     public static void loadDongtai() {
         Constant.Reccent_Frag = Fragment_Center.dongtaiFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getDongtaiFragment(), "dongtai", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getDongtaiFragment(), "dongtai", null, 0);
     }
 
     public static void loadZhuxiao() {
         Constant.activity.getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         Constant.Reccent_Frag = Fragment_Center.LoginFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getLoginFragment(), "login", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getLoginFragment(), "login", null, 0);
     }
 
     public static void loadRenwuXiangqing() {
         Constant.Reccent_Frag = Fragment_Center.renwuxiangqingFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getRenwuxiangqingFragment(), "renwuxiangqing", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getRenwuxiangqingFragment(), "renwuxiangqing", null, 0);
+    }
+
+    public static void loadRenwuXinjian(int from) {
+        Constant.Reccent_Frag = Fragment_Center.renwuxinjianFragment_num;
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getRenwuxinjianFragment(), "renwuxinjian", null, from);
     }
 
     public static void loadxiangmuAdd() {
         Constant.Reccent_Frag = Fragment_Center.xiangmuAddFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getxiangmuAddFragment(), "xiangmuAdd", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getxiangmuAddFragment(), "xiangmuAdd", null, 0);
     }
 
     public static void loadxiangmuMain() {
         Constant.Reccent_Frag = Fragment_Center.xiangmuMainFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getxiangmuMainFragment(), "xiangmuxiangxi", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getxiangmuMainFragment(), "xiangmuxiangxi", null, 0);
     }
 
     public static void loadchengyuanAdd() {
         Constant.Reccent_Frag = Fragment_Center.chengyuanAddFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getChengyuanAddFragment(), "chengyuanAdd", null);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getChengyuanAddFragment(), "chengyuanAdd", null, 0);
     }
 
     //每一个界面 获取实例对象的方法
@@ -104,6 +111,10 @@ public class Fragment_Center {
         return (renwuxiangqingFragment) renwuxiangqingFragment.getInstance(renwuxiangqingFragment.class, renwuxiangqingFragment.Fragment);
     }
 
+    public static renwuxinjianFragment getRenwuxinjianFragment() {
+        return (renwuxinjianFragment) renwuxinjianFragment.getInstance(renwuxinjianFragment.class, renwuxinjianFragment.Fragment);
+    }
+
     public static xiangmuAddFragment getxiangmuAddFragment() {
         return (xiangmuAddFragment) xiangmuAddFragment.getInstance(xiangmuAddFragment.class, xiangmuAddFragment.Fragment);
     }
@@ -115,4 +126,5 @@ public class Fragment_Center {
     public static chengyuanAddFragment getChengyuanAddFragment() {
         return (chengyuanAddFragment) chengyuanAddFragment.getInstance(chengyuanAddFragment.class, chengyuanAddFragment.Fragment);
     }
+
 }

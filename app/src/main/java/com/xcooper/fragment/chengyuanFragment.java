@@ -99,9 +99,9 @@ public class chengyuanFragment extends MyFragment {
             open_gray.setAnimation(alphaAnimation);
             alphaAnimation.startNow();
             open.startAnimation(animation_open);
-            start_anim(tips_open, tips_open, 0);
-            start_anim(kefu, tips_kefu, 0);
-            start_anim(shuaxin, tips_shuaxin, 50);
+            start_anim((String) open.getTag(), tips_open, tips_open, 0);
+            start_anim((String) open.getTag(), kefu, tips_kefu, 0);
+            start_anim((String) open.getTag(), shuaxin, tips_shuaxin, 50);
 //            start_anim(dingdan, tips_dingdan, 100);
 //            start_anim(baoxiu, tips_baoxiu, 150);
         } else if (open.getTag().equals("open")) {
@@ -111,9 +111,9 @@ public class chengyuanFragment extends MyFragment {
             open_gray.setAnimation(alphaAnimation);
             alphaAnimation.startNow();
             open.startAnimation(animation_close);
-            start_anim(tips_open, tips_open, 150);
-            start_anim(kefu, tips_kefu, 150);
-            start_anim(shuaxin, tips_shuaxin, 100);
+            start_anim((String) open.getTag(), tips_open, tips_open, 150);
+            start_anim((String) open.getTag(), kefu, tips_kefu, 150);
+            start_anim((String) open.getTag(), shuaxin, tips_shuaxin, 100);
 //            start_anim(dingdan, tips_dingdan, 50);
 //            start_anim(baoxiu, tips_baoxiu, 0);
         }
@@ -149,9 +149,9 @@ public class chengyuanFragment extends MyFragment {
      * @param tips
      * @param startOffset
      */
-    public void start_anim(View view, View tips, long startOffset) {
+    public void start_anim(String tag, View view, View tips, long startOffset) {
         Animation animation;
-        if (open.getTag().equals("close")) {
+        if (tag.equals("close")) {
             //初始化
             animation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0);
             //设置动画时间

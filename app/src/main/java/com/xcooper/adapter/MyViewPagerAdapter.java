@@ -6,7 +6,9 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-//ViewPagerÊÊÅäÆ÷
+/**
+ * ViewPageré€‚é…å™¨
+ */
 public class MyViewPagerAdapter extends PagerAdapter {
     private List<View> mViewList;
     private List<String> mTitleList;
@@ -18,28 +20,28 @@ public class MyViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return mViewList.size();//Ò³¿¨Êı
+        return mViewList.size();//é¡µå¡æ•°
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == object;//¹Ù·½ÍÆ¼öĞ´·¨
+        return view == object;//å®˜æ–¹æ¨èå†™æ³•
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        container.addView(mViewList.get(position));//Ìí¼ÓÒ³¿¨
+        container.addView(mViewList.get(position));//æ·»åŠ é¡µå¡
         return mViewList.get(position);
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView(mViewList.get(position));//É¾³ıÒ³¿¨
+        container.removeView(mViewList.get(position));//åˆ é™¤é¡µå¡
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mTitleList.get(position);//Ò³¿¨±êÌâ
+        return mTitleList.get(position);//é¡µå¡æ ‡é¢˜
     }
 
 }

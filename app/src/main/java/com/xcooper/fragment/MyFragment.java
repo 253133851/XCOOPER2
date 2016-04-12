@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 import com.xcooper.Method_Center;
 
 /**
- * ÖØĞ´µÄFragmentÀà  ×Ô¶¨ÒåĞèÒªµÄÄÚÈİ
+ * é‡å†™çš„Fragmentç±»  è‡ªå®šä¹‰éœ€è¦çš„å†…å®¹
  */
 public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnClickListener {
 
     int LAYOUT;
+
+    int FROM ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnC
         return view;
     }
 
-    //·ÀÖ¹fragmentÖ®¼ä³öÏÖ´¥ÃşÊÂ¼ş´©Í¸µÄÇé¿ö ½«´¥ÃşÊÂ¼ş½ØÈ¡ÔÚÕâÒ»²ã
+    //é˜²æ­¢fragmentä¹‹é—´å‡ºç°è§¦æ‘¸äº‹ä»¶ç©¿é€çš„æƒ…å†µ å°†è§¦æ‘¸äº‹ä»¶æˆªå–åœ¨è¿™ä¸€å±‚
     public void onStart() {
         getView().setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -41,14 +43,13 @@ public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnC
         super.onStart();
     }
 
-    //ÎªÃ¿Ò»¸öFragment·ÖÅäÎ¨Ò»µÄÒ»¸öÊµÀı
+    //ä¸ºæ¯ä¸€ä¸ªFragmentåˆ†é…å”¯ä¸€çš„ä¸€ä¸ªå®ä¾‹
     public static synchronized Object getInstance(Class frag_class, Object fragment_child) {
         if (fragment_child == null) {
             synchronized (frag_class) {
                 if (fragment_child == null) {
                     try {
-                        fragment_child = frag_class.newInstance(); //ĞÂ½¨ÊµÀı
-                        //    setFRAG(fragment_child); //¸³Öµ
+                        fragment_child = frag_class.newInstance(); //æ–°å»ºå®ä¾‹
                     } catch (java.lang.InstantiationException e) {
                         e.printStackTrace();
                     } catch (IllegalAccessException e) {
@@ -88,6 +89,14 @@ public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnC
         this.LAYOUT = LAYOUT;
     }
 
+    public int getFROM() {
+        return FROM;
+    }
+
+    public void setFROM(int FROM) {
+        this.FROM = FROM;
+    }
+
     public void onClick(View view) {
 
     }
@@ -99,7 +108,7 @@ public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnC
 }
 
 /**
- * ÓÃÓÚÔÚcreate_ViewÖ®Ç°µÄ²Ù×÷½Ó¿Ú ÏÖÔÚÓÃÀ´¸ø×ÓÀàÊµÀı¸³Öµ
+ * ç”¨äºåœ¨create_Viewä¹‹å‰çš„æ“ä½œæ¥å£ ç°åœ¨ç”¨æ¥ç»™å­ç±»å®ä¾‹èµ‹å€¼
  */
 interface Fragment_Pre {
 
@@ -108,7 +117,7 @@ interface Fragment_Pre {
 }
 
 /**
- * ÓÃÓÚ¹æ·¶»¯FragmentµÄ´úÂë
+ * ç”¨äºè§„èŒƒåŒ–Fragmentçš„ä»£ç 
  */
 interface Init {
 

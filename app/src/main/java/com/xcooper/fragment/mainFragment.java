@@ -52,8 +52,8 @@ public class mainFragment extends MyFragment {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private Toolbar mToolbar;
-    private ButtonFloat open, shuaxin, kefu;
-    private TextView tips_open, tips_shuaxin, tips_kefu;
+    private ButtonFloat open, shuaxin, renwuxinjian;
+    private TextView tips_open, tips_shuaxin, tips_renwuxinjian;
     private ImageView open_gray;
 
 
@@ -74,12 +74,12 @@ public class mainFragment extends MyFragment {
 //        dingdan = (ButtonFloat) view.findViewById(R.id.dingdan);
 //        baoxiu = (ButtonFloat) view.findViewById(R.id.baoxiu);
         shuaxin = (ButtonFloat) view.findViewById(R.id.shuaxin);
-        kefu = (ButtonFloat) view.findViewById(R.id.kefu);
+        renwuxinjian = (ButtonFloat) view.findViewById(R.id.renwuxinjian);
         tips_open = (TextView) view.findViewById(R.id.tv_tips_open);
 //        tips_dingdan = (TextView) view.findViewById(R.id.tv_tips_dingdan);
 //        tips_baoxiu = (TextView) view.findViewById(R.id.tv_tips_baoxiu);
         tips_shuaxin = (TextView) view.findViewById(R.id.tv_tips_shuaxin);
-        tips_kefu = (TextView) view.findViewById(R.id.tv_tips_kefu);
+        tips_renwuxinjian = (TextView) view.findViewById(R.id.tv_tips_renwuxinjian);
         open_gray = (ImageView) view.findViewById(R.id.open_gray);
 
 
@@ -136,6 +136,7 @@ public class mainFragment extends MyFragment {
         addClick(open_gray);
         addClick(shuaxin);
         addClick(renwu_test_click);
+        addClick(renwuxinjian);
     }
 
     @Override
@@ -152,7 +153,9 @@ public class mainFragment extends MyFragment {
             case R.id.renwu_test_click:
                 Fragment_Center.loadRenwuXiangqing();
                 break;
-
+            case R.id.renwuxinjian:
+                Fragment_Center.loadRenwuXinjian(Fragment_Center.mainFragment_num);
+                break;
         }
     }
 
@@ -178,7 +181,7 @@ public class mainFragment extends MyFragment {
             alphaAnimation.startNow();
             open.startAnimation(animation_open);
             start_anim(tips_open, tips_open, 0);
-            start_anim(kefu, tips_kefu, 0);
+            start_anim(renwuxinjian, tips_renwuxinjian, 0);
             start_anim(shuaxin, tips_shuaxin, 50);
 //            start_anim(dingdan, tips_dingdan, 100);
 //            start_anim(baoxiu, tips_baoxiu, 150);
@@ -190,7 +193,7 @@ public class mainFragment extends MyFragment {
             alphaAnimation.startNow();
             open.startAnimation(animation_close);
             start_anim(tips_open, tips_open, 150);
-            start_anim(kefu, tips_kefu, 150);
+            start_anim(renwuxinjian, tips_renwuxinjian, 150);
             start_anim(shuaxin, tips_shuaxin, 100);
 //            start_anim(dingdan, tips_dingdan, 50);
 //            start_anim(baoxiu, tips_baoxiu, 0);

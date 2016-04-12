@@ -126,7 +126,7 @@
             materialdesign:iconDrawable="@drawable/open" />
 
         <com.gc.materialdesign.views.ButtonFloat
-            android:id="@+id/kefu"
+            android:id="@+id/renwuxinjian"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_above="@id/open"
@@ -142,8 +142,8 @@
             android:id="@+id/shuaxin"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_above="@id/kefu"
-            android:layout_alignLeft="@id/kefu"
+            android:layout_above="@id/renwuxinjian"
+            android:layout_alignLeft="@id/renwuxinjian"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="16dp"
             android:background="@color/main_color_dark"
@@ -223,14 +223,14 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/tv_tips_kefu"
+            android:id="@+id/tv_tips_renwuxinjian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/kefu"
+            android:layout_alignBottom="@id/renwuxinjian"
             android:layout_marginBottom="36dp"
             android:layout_marginRight="16dp"
-            android:layout_toLeftOf="@id/kefu"
-            android:layout_toStartOf="@id/kefu"
+            android:layout_toLeftOf="@id/renwuxinjian"
+            android:layout_toStartOf="@id/renwuxinjian"
             android:gravity="center"
             android:text="新增任务"
             android:textColor="@color/main_color_dark"

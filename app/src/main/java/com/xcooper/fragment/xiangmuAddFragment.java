@@ -32,7 +32,8 @@ public class xiangmuAddFragment extends MyFragment {
     }
 
     public void Init_Data() {
-        setTitle("新增项目");
+//        setTitle("新增项目");
+        setTitle(null);
     }
 
     public void onClick(View view) {

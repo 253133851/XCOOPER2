@@ -162,6 +162,14 @@ public class mainActivity extends ActionBarActivity {
         } else if (Constant.Reccent_Frag == Fragment_Center.chengyuanAddFragment_num) {
             getFragmentManager().popBackStack();
             Constant.Reccent_Frag = Fragment_Center.xiangmuAddFragment_num;
+        } else if (Constant.Reccent_Frag == Fragment_Center.renwuxinjianFragment_num) {
+            System.out.println("from "+Fragment_Center.getRenwuxinjianFragment().getFROM());
+            if (Fragment_Center.getRenwuxinjianFragment().getFROM() == Fragment_Center.mainFragment_num) {
+                Fragment_Center.loadRenWu();
+            } else {
+                getFragmentManager().popBackStack();
+                Constant.Reccent_Frag = Fragment_Center.xiangmuMainFragment_num;
+            }
         } else {
             Method_Center.show_Toast("Out", true);
             super.onBackPressed();

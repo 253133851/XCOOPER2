@@ -54,15 +54,17 @@ public class Method_Center {
      * @param args
      */
     public static void turnToFragment(FragmentManager fm, MyFragment
-            frag, String tag, Bundle args) {
-        Fragment fragment = fm.findFragmentByTag(tag);
+            frag, String tag, Bundle args, int from) {
+        MyFragment fragment = (MyFragment) fm.findFragmentByTag(tag);
         boolean isFragmentExist = true;
         if (fragment == null) {
 //            try {
             isFragmentExist = false;
 //                fragment = (MyFragment) fragmentClass.newInstance();
             fragment = frag;
-            fragment.setArguments(new Bundle());
+            Bundle bundle = new Bundle();
+            bundle.putInt("from", from);
+            fragment.setArguments(bundle);
 //            } catch (java.lang.InstantiationException e) {
 //                e.printStackTrace();
 //            } catch (IllegalAccessException e) {
@@ -90,12 +92,13 @@ public class Method_Center {
     /**
      * 设置toolbar名称
      * null则隐藏toolbar
+     *
      * @param name
      */
     public static void setToolBarName(String name) {
         if (null != name && !("").equals(name)) {
             mainActivity.mToolbar.setVisibility(View.VISIBLE);
-            mainActivity.title.setText("name");
+            mainActivity.title.setText(name);
         } else {
             mainActivity.mToolbar.setVisibility(View.GONE);
         }
