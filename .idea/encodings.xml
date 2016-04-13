@@ -14,5 +14,6 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/fragment/xiangmuAddFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/fragment/xiangmuFragment.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/fragment/xiangmuMainFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/xcooper/view/RoundProgressBar.java" charset="UTF-8" />
   </component>
 </project>

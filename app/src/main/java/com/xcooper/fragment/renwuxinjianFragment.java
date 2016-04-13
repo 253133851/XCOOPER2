@@ -23,7 +23,8 @@ public class renwuxinjianFragment extends MyFragment {
     }
 
     public void Init_Data() {
-        setTitle("新建任务");
+//        setTitle("新建任务");
+        setTitle(null);
 
     }
 

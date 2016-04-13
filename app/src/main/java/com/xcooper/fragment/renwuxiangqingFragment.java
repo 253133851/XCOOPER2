@@ -2,7 +2,6 @@ package com.xcooper.fragment;
 
 import android.view.View;
 
-import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
 
@@ -15,7 +14,8 @@ public class renwuxiangqingFragment extends MyFragment {
 
     public void Pre() {
         if (Fragment == null) Fragment = Fragment_Center.getRenwuxiangqingFragment();
-        setLAYOUT(R.layout.renwuxiangqing);
+//        setLAYOUT(R.layout.renwuxiangqing);
+        setLAYOUT(R.layout.fanqiezhong_xiangqing);
     }
 
     public void Init_View(View view) {
