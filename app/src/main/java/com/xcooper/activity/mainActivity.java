@@ -45,7 +45,7 @@ public class mainActivity extends ActionBarActivity {
     public static ActionBarDrawerToggle mDrawerToggle;
     public static Toolbar mToolbar;
     public static TextView title;
-    private RevealLayout ll_chengyuan, ll_tongzhi, ll_renwu, ll_xiangmu, ll_dongtai, ll_zhuxiao;
+    private RevealLayout ll_chengyuan, ll_tongzhi, ll_renwu, ll_xiangmu, ll_dongtai, ll_fanqiezhong, ll_zhuxiao;
 
     /**
      * 初始化数据
@@ -71,6 +71,7 @@ public class mainActivity extends ActionBarActivity {
         ll_xiangmu = (RevealLayout) findViewById(R.id.ll_xiangmu);
         ll_dongtai = (RevealLayout) findViewById(R.id.ll_dongtai);
         ll_zhuxiao = (RevealLayout) findViewById(R.id.ll_zhuxiao);
+        ll_fanqiezhong = (RevealLayout) findViewById(R.id.ll_fanqiezhong);
 
         title = (TextView) findViewById(R.id.title);
 
@@ -145,6 +146,14 @@ public class mainActivity extends ActionBarActivity {
             }
         });
 
+        ll_fanqiezhong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDrawerLayout.closeDrawers();
+                Fragment_Center.loadfanqiezhong();
+            }
+        });
+
     }
 
 
@@ -158,14 +167,12 @@ public class mainActivity extends ActionBarActivity {
     @Override
     public void onBackPressed() {
 
-
         if (Constant.Reccent_Frag == Fragment_Center.chengyuanFragment_num ||
                 Constant.Reccent_Frag == Fragment_Center.tongzhiFragment_num ||
                 Constant.Reccent_Frag == Fragment_Center.dongtaiFragment_num ||
                 Constant.Reccent_Frag == Fragment_Center.xiangmuFragment_num ||
+                Constant.Reccent_Frag == Fragment_Center.fanqiezhongFragment_num ||
                 Constant.Reccent_Frag == Fragment_Center.renwuxiangqingFragment_num) {
-//            getFragmentManager().popBackStack();
-//            Constant.Reccent_Frag = Fragment_Center.mainFragment_num;
             Fragment_Center.loadRenWu();
         } else if (Constant.Reccent_Frag == Fragment_Center.xiangmuAddFragment_num) {
             getFragmentManager().popBackStack();
@@ -176,8 +183,10 @@ public class mainActivity extends ActionBarActivity {
         } else if (Constant.Reccent_Frag == Fragment_Center.chengyuanAddFragment_num) {
             getFragmentManager().popBackStack();
             Constant.Reccent_Frag = Fragment_Center.xiangmuAddFragment_num;
+        } else if (Constant.Reccent_Frag == Fragment_Center.fanqiezhongXiangqingFragment_num) {
+            getFragmentManager().popBackStack();
+            Constant.Reccent_Frag = Fragment_Center.fanqiezhongFragment_num;
         } else if (Constant.Reccent_Frag == Fragment_Center.renwuxinjianFragment_num) {
-            System.out.println("from " + Fragment_Center.getRenwuxinjianFragment().getFROM());
             if (Fragment_Center.getRenwuxinjianFragment().getFROM() == Fragment_Center.mainFragment_num) {
                 Fragment_Center.loadRenWu();
             } else {

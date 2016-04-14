@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/main_color_dark"
+        android:gravity="center"
+        android:text="21:37"
+        android:textColor="@color/main_color_white"
+        android:textSize="36sp" />
+
+    <include layout="@layout/lv_fenjiexian" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:text="今天"
+        android:textColor="@color/main_color_dark"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/main_color_light" />
+
+
+    <include
+        android:id="@+id/text_fanqiezhong_click"
+        layout="@layout/fanqiezhong_renwu_item" />
+
+    <include layout="@layout/fanqiezhong_renwu_item" />
+
+    <include layout="@layout/fanqiezhong_renwu_item" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:text="未来"
+        android:textColor="@color/main_color_dark"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/main_color_light" />
+
+
+    <include layout="@layout/fanqiezhong_renwu_item" />
+
+    <include layout="@layout/fanqiezhong_renwu_item" />
+
+    <include layout="@layout/fanqiezhong_renwu_item" />
 
 </LinearLayout>

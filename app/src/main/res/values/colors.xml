@@ -451,6 +451,8 @@
 
     <color name="main_color_dark">#455A64</color>
 
+    <color name="main_color_white">#D1D1D1</color>
+
     <color name="reveal_color">#1b000000</color>
 
     <color name="open_gray_color">#F2FAFAFA</color>

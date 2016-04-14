@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color_dark"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="世界十大难解之谜"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="right"
+                    android:text="创建人 : 陈文琪"
+                    android:textColor="#DDFAFAFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingLeft="16dp"
+                    android:text="创建时间 : 5.10"
+                    android:textColor="#DDFAFAFF"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <com.gc.materialdesign.views.ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="话题描述 ： "
+                    android:textColor="@color/main_color_dark"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="   我是一头小毛驴，\n   我从来都不骑，\n   有一天我心血来潮，\n   骑着去赶集，\n   我手里拿着小皮鞭，\n   我心里也不急，\n   稀里哗啦稀里哗啦,\n   你是大傻逼。"
+                    android:textColor="@color/main_color_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#66607D8B" />
+
+
+                <include layout="@layout/pinglun_item" />
+
+                <include layout="@layout/pinglun_item" />
+
+                <include layout="@layout/pinglun_item" />
+
+                <include layout="@layout/pinglun_item" />
+
+            </LinearLayout>
+
+
+        </com.gc.materialdesign.views.ScrollView>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/main_color_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:hint="请输入..."
+                android:shadowColor="@color/main_color_dark"
+                android:singleLine="true"
+                android:textColorHint="@color/main_color_light_alpha"
+                android:textSize="15dip" />
+
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:background="@drawable/submit_button_bg_color"
+                android:text="提交"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

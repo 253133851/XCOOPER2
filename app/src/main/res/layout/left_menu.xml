@@ -184,7 +184,7 @@
         </com.xcooper.view.RevealLayout>
 
         <com.xcooper.view.RevealLayout
-            android:id="@+id/ll_gengxin"
+            android:id="@+id/ll_fanqiezhong"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:clickable="true"

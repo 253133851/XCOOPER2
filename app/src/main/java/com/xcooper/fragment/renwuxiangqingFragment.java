@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
+import com.xcooper.view.RoundProgressBar;
 
 /**
  * Created by hh on 2016.4.9.
@@ -14,16 +15,19 @@ public class renwuxiangqingFragment extends MyFragment {
 
     public void Pre() {
         if (Fragment == null) Fragment = Fragment_Center.getRenwuxiangqingFragment();
-//        setLAYOUT(R.layout.renwuxiangqing);
-        setLAYOUT(R.layout.fanqiezhong_xiangqing);
+        setLAYOUT(R.layout.renwuxiangqing);
+//        setLAYOUT(R.layout.fanqiezhong_xiangqing);
     }
 
+    RoundProgressBar progress;
+
     public void Init_View(View view) {
-        setTitle(null);
+        progress = (RoundProgressBar) view.findViewById(R.id.roundProgressBar2);
     }
 
     public void Init_Data() {
-        mainActivity.mToolbar.setVisibility(View.GONE);
+        setTitle(null);
+        progress.setText(6000);
     }
 
     public void onClick(View view) {

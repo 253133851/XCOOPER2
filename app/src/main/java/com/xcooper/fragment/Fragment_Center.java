@@ -22,6 +22,8 @@ public class Fragment_Center {
     public static int xiangmuMainFragment_num = 8;
     public static int chengyuanAddFragment_num = 9;
     public static int renwuxinjianFragment_num = 10;
+    public static int fanqiezhongFragment_num = 11;
+    public static int fanqiezhongXiangqingFragment_num = 11;
 
     //成员界面
     public static void loadChengyuan() {
@@ -82,6 +84,16 @@ public class Fragment_Center {
         Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getChengyuanAddFragment(), "chengyuanAdd", null, 0);
     }
 
+    public static void loadfanqiezhong() {
+        Constant.Reccent_Frag = Fragment_Center.fanqiezhongFragment_num;
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getFanqiezhongFragment(), "fanqiezhong", null, 0);
+    }
+
+    public static void loadfanqiezhongXiangqing() {
+        Constant.Reccent_Frag = Fragment_Center.fanqiezhongXiangqingFragment_num;
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getFanqiezhongXiangqingFragment(), "fanqiezhongXiangqing", null, 0);
+    }
+
     //每一个界面 获取实例对象的方法
     public static loginFragment getLoginFragment() {
         return (loginFragment) loginFragment.getInstance(loginFragment.class, loginFragment.Fragment);
@@ -125,6 +137,14 @@ public class Fragment_Center {
 
     public static chengyuanAddFragment getChengyuanAddFragment() {
         return (chengyuanAddFragment) chengyuanAddFragment.getInstance(chengyuanAddFragment.class, chengyuanAddFragment.Fragment);
+    }
+
+    public static fanqiezhongFragment getFanqiezhongFragment() {
+        return (fanqiezhongFragment) fanqiezhongFragment.getInstance(fanqiezhongFragment.class, fanqiezhongFragment.Fragment);
+    }
+
+    public static fanqiezhongXiangqingFragment getFanqiezhongXiangqingFragment() {
+        return (fanqiezhongXiangqingFragment) fanqiezhongXiangqingFragment.getInstance(fanqiezhongXiangqingFragment.class, fanqiezhongXiangqingFragment.Fragment);
     }
 
 }
