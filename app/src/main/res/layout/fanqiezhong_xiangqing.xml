@@ -57,15 +57,6 @@
             android:textColor="@color/main_color_white"
             android:textSize="28sp" />
 
-        <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:background="@color/main_color_dark"-->
-        <!--android:gravity="center_horizontal"-->
-        <!--android:text="完成任务订单"-->
-        <!--android:textColor="@color/main_color_white"-->
-        <!--android:textSize="16sp" />-->
     </LinearLayout>
 
     <ScrollView

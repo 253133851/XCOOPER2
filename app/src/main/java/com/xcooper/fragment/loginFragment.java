@@ -41,6 +41,7 @@ public class loginFragment extends MyFragment {
 
     public void Init_Data() {
         setTitle(null);
+        setNoFloatButtons(true);
         mainActivity.mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         sp = Constant.context.getSharedPreferences("userInfo", 0);
     }

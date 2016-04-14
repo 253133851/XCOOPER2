@@ -30,9 +30,9 @@ public class fanqiezhongFragment extends MyFragment {
     private ViewPager mViewPager;
 
     private LayoutInflater mInflater;
-    private List<String> mTitleList = new ArrayList<>();//Ò³¿¨±êÌâ¼¯ºÏ
-    private View view1, view2, view3, view4, view5;//Ò³¿¨ÊÓÍ¼
-    private List<View> mViewList = new ArrayList<>();//Ò³¿¨ÊÓÍ¼¼¯ºÏ
+    private List<String> mTitleList = new ArrayList<>();//é¡µå¡æ ‡é¢˜é›†åˆ
+    private View view1, view2, view3, view4, view5;//é¡µå¡è§†å›¾
+    private List<View> mViewList = new ArrayList<>();//é¡µå¡è§†å›¾é›†åˆ
 
     RevealLayout text_fanqiezhong_click;
 
@@ -51,29 +51,30 @@ public class fanqiezhongFragment extends MyFragment {
 
     public void Init_Data() {
 
-        setTitle("·¬ÇÑÖÓ");
+        setTitle("ç•ªèŒ„é’Ÿ");
+
+        setNoFloatButtons(true);
+
+        mViewList = new ArrayList<>();//é¡µå¡è§†å›¾é›†åˆ
+        mTitleList = new ArrayList<>();//é¡µå¡è§†å›¾é›†åˆ
 
 
-        mViewList = new ArrayList<>();//Ò³¿¨ÊÓÍ¼¼¯ºÏ
-        mTitleList = new ArrayList<>();//Ò³¿¨ÊÓÍ¼¼¯ºÏ
-
-
-        //Ìí¼ÓÒ³¿¨ÊÓÍ¼
+        //æ·»åŠ é¡µå¡è§†å›¾
         mViewList.add(view1);
         mViewList.add(view2);
 
-        //Ìí¼ÓÒ³¿¨±êÌâ
-        mTitleList.add("ÈÎÎñ");
-        mTitleList.add("ÀúÊ·");
+        //æ·»åŠ é¡µå¡æ ‡é¢˜
+        mTitleList.add("ä»»åŠ¡");
+        mTitleList.add("å†å²");
 
-        mTabLayout.setTabMode(TabLayout.MODE_FIXED);//ÉèÖÃtabÄ£Ê½£¬µ±Ç°ÎªÏµÍ³Ä¬ÈÏÄ£Ê½
-        mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(0)));//Ìí¼ÓtabÑ¡Ïî¿¨
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);//è®¾ç½®tabæ¨¡å¼ï¼Œå½“å‰ä¸ºç³»ç»Ÿé»˜è®¤æ¨¡å¼
+        mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(0)));//æ·»åŠ tabé€‰é¡¹å¡
         mTabLayout.addTab(mTabLayout.newTab().setText(mTitleList.get(1)));
 
         MyViewPagerAdapter mAdapter = new MyViewPagerAdapter(mViewList, mTitleList);
-        mViewPager.setAdapter(mAdapter);//¸øViewPagerÉèÖÃÊÊÅäÆ÷
-        mTabLayout.setupWithViewPager(mViewPager);//½«TabLayoutºÍViewPager¹ØÁªÆğÀ´¡£
-        mTabLayout.setTabsFromPagerAdapter(mAdapter);//¸øTabsÉèÖÃÊÊÅäÆ÷
+        mViewPager.setAdapter(mAdapter);//ç»™ViewPagerè®¾ç½®é€‚é…å™¨
+        mTabLayout.setupWithViewPager(mViewPager);//å°†TabLayoutå’ŒViewPagerå…³è”èµ·æ¥ã€‚
+        mTabLayout.setTabsFromPagerAdapter(mAdapter);//ç»™Tabsè®¾ç½®é€‚é…å™¨
     }
 
     @Override

@@ -7,7 +7,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gc.materialdesign.views.ButtonFloat;
 import com.xcooper.Method_Center;
+import com.xcooper.R;
+import com.xcooper.activity.mainActivity;
 
 /**
  * 重写的Fragment类  自定义需要的内容
@@ -16,7 +19,7 @@ public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnC
 
     int LAYOUT;
 
-    int FROM ;
+    int FROM;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +83,17 @@ public class MyFragment extends Fragment implements Fragment_Pre, Init, View.OnC
         view.setOnClickListener(this);
     }
 
+    public void setNoFloatButtons(boolean noFloatButtons) {
+        if (noFloatButtons) mainActivity.setFloatButtons(0, null, null);
+    }
+
+    public void setFloatButtons(int index, int[] pics, String[] tips) {
+        mainActivity.setFloatButtons(index, pics, tips);
+    }
+
+    public ButtonFloat getFloatButtons(int index) {
+        return mainActivity.getFloatButtons(index);
+    }
 
     public int getLAYOUT() {
         return LAYOUT;

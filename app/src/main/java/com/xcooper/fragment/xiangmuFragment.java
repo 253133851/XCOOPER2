@@ -25,8 +25,20 @@ public class xiangmuFragment extends MyFragment {
 
 
     public void Init_View(View view) {
-        but_new_xiangmu = (ButtonFloat) view.findViewById(R.id.but_new_xiangmu);
+
         xiangmu_test_click = (LinearLayout) view.findViewById(R.id.xiangmu_test_click);
+
+        setFloatButtons(2, new int[]{R.drawable.kefu, R.drawable.dingdan}, new String[]{
+                "客服", "订单"
+        });
+
+        getFloatButtons(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment_Center.loadxiangmuAdd();
+                mainActivity.set_anim();
+            }
+        });
     }
 
     public void Init_Data() {
@@ -34,15 +46,15 @@ public class xiangmuFragment extends MyFragment {
     }
 
     public void Init_Listener() {
-        addClick(but_new_xiangmu);
+//        addClick(but_new_xiangmu);
         addClick(xiangmu_test_click);
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.but_new_xiangmu:
-                Fragment_Center.loadxiangmuAdd();
-                break;
+//            case R.id.but_new_xiangmu:
+//                Fragment_Center.loadxiangmuAdd();
+//                break;
             case R.id.xiangmu_test_click:
                 Fragment_Center.loadxiangmuMain();
                 break;

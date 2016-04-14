@@ -2,26 +2,177 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include layout="@layout/toolbar" />
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-
-        <FrameLayout
-            android:id="@+id/fl_main"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#f9f9f9">
+            android:background="#f9f900">
 
-        </FrameLayout>
+            <FrameLayout
+                android:id="@+id/fl_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f9f9f9">
+
+            </FrameLayout>
+
+
+            <ImageView
+                android:id="@+id/open_gray"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/open_gray_color"
+                android:clickable="true"
+                android:visibility="gone" />
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/view0"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="16dp"
+                android:background="@color/main_color_dark"
+                android:tag="close"
+                materialdesign:animate="true" />
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/view1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_above="@id/view0"
+                android:layout_alignLeft="@id/view0"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/main_color_dark"
+                android:visibility="gone"
+                materialdesign:animate="true" />
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/view2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_above="@id/view1"
+                android:layout_alignLeft="@id/view1"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/main_color_dark"
+                android:visibility="gone"
+                materialdesign:animate="true" />
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/view3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_above="@id/view2"
+                android:layout_alignLeft="@id/view2"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/main_color_dark"
+                android:visibility="gone"
+                materialdesign:animate="true" />
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/view4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_above="@id/view3"
+                android:layout_alignLeft="@id/view3"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/main_color_dark"
+                android:visibility="gone"
+                materialdesign:animate="true" />
+
+            <TextView
+                android:id="@+id/tv_tips_view4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/view4"
+                android:layout_marginBottom="36dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/view4"
+                android:layout_toStartOf="@id/view4"
+                android:gravity="center"
+                android:text="tip5"
+                android:textColor="@color/main_color_dark"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_tips_view3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/view3"
+                android:layout_marginBottom="36dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/view3"
+                android:layout_toStartOf="@id/view3"
+                android:gravity="center"
+                android:text="tip4"
+                android:textColor="@color/main_color_dark"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_tips_view2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/view2"
+                android:layout_marginBottom="36dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/view2"
+                android:layout_toStartOf="@id/view2"
+                android:gravity="center"
+                android:text="tip3"
+                android:textColor="@color/main_color_dark"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_tips_view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/view1"
+                android:layout_marginBottom="36dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/view1"
+                android:layout_toStartOf="@id/view1"
+                android:gravity="center"
+                android:text="tip2"
+                android:textColor="@color/main_color_dark"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/tv_tips_view0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/view0"
+                android:layout_marginBottom="36dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/view0"
+                android:layout_toStartOf="@id/view0"
+                android:gravity="center"
+                android:text="tips1"
+                android:textColor="@color/main_color_dark"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/drawer_view"

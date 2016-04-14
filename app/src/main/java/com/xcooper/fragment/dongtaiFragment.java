@@ -20,7 +20,7 @@ public class dongtaiFragment extends MyFragment {
     }
 
     public void Init_View(View view) {
-
+      setNoFloatButtons(true);
     }
 
     public void Init_Data() {

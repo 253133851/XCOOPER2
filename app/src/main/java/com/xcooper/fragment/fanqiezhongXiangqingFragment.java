@@ -22,7 +22,7 @@ public class fanqiezhongXiangqingFragment extends MyFragment {
 
     public void Init_Data() {
         setTitle("¶¯Ì¬");
-
+        setNoFloatButtons(true);
     }
 
     public void onClick(View view) {

@@ -22,6 +22,7 @@ public class chengyuanAddFragment extends MyFragment {
 
     public void Init_Data() {
         setTitle("添加成员");
+        setNoFloatButtons(true);
     }
 
     public void onClick(View view) {

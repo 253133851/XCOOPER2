@@ -40,8 +40,6 @@ public class ButtonFloat extends Button{
 	float showPosition;
 	float hidePosition;
 	
-	
-	
 	public ButtonFloat(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setBackgroundResource(R.drawable.background_button_float);

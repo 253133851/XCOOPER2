@@ -1,259 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f9f9f9">
+        android:background="#f9f9f9"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="36dp"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/main_color_dark"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/main_color_dark"
+            app:tabTextColor="@color/main_color_dark" />
+        <!--app:tabBackground="@color/main_color_dark"-->
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                app:tabGravity="fill"
-                app:tabIndicatorColor="@color/main_color_dark"
-                app:tabMode="scrollable"
-                app:tabSelectedTextColor="@color/main_color_dark"
-                app:tabTextColor="@color/main_color_dark" />
-            <!--app:tabBackground="@color/main_color_dark"-->
-
-            <!--可滑动的布局内容-->
-            <android.support.v4.view.ViewPager
-                android:id="@+id/vp_view"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="157dp"-->
-            <!--android:background="@color/main_color_dark"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="2"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="3dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:paddingLeft="16dp"-->
-            <!--android:text="2016"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textSize="24sp" />-->
-
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="3dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:paddingLeft="16dp"-->
-            <!--android:text="周五"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textSize="26sp" />-->
-
-            <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="3dp"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:paddingLeft="16dp"-->
-            <!--android:text="一月 十八"-->
-            <!--android:textColor="@color/white"-->
-            <!--android:textSize="28sp" />-->
-
-            <!--</LinearLayout>-->
-
-            <!--<LinearLayout-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="3"></LinearLayout>-->
-
-            <!--</LinearLayout>-->
-
-            <!-- -->
-            <!--<ListView-->
-            <!--android:id="@+id/lv_order_list"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="1">-->
-            <!--</ListView>-->
-            <!--</LinearLayout>-->
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/open_gray"
+        <!--可滑动的布局内容-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="36dp"
-            android:background="@color/open_gray_color"
-            android:clickable="true"
-            android:visibility="gone" />
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-        <com.gc.materialdesign.views.ButtonFloat
-            android:id="@+id/open"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="16dp"
-            android:background="@color/main_color_dark"
-            android:tag="close"
-            materialdesign:animate="true"
-            materialdesign:iconDrawable="@drawable/open" />
-
-        <com.gc.materialdesign.views.ButtonFloat
-            android:id="@+id/kefu"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_above="@id/open"
-            android:layout_alignLeft="@id/open"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/main_color_dark"
-            android:visibility="gone"
-            materialdesign:animate="true"
-            materialdesign:iconDrawable="@drawable/kefu" />
-
-        <com.gc.materialdesign.views.ButtonFloat
-            android:id="@+id/shuaxin"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_above="@id/kefu"
-            android:layout_alignLeft="@id/kefu"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/main_color_dark"
-            android:visibility="gone"
-            materialdesign:animate="true"
-            materialdesign:iconDrawable="@drawable/shuaxin" />
-
-        <!--<com.gc.materialdesign.views.ButtonFloat-->
-        <!--android:id="@+id/dingdan"-->
-        <!--android:layout_width="48dp"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:layout_above="@id/shuaxin"-->
-        <!--android:layout_alignLeft="@id/shuaxin"-->
-        <!--android:layout_marginBottom="16dp"-->
-        <!--android:layout_marginRight="16dp"-->
-        <!--android:background="@color/main_color_dark"-->
-        <!--android:visibility="gone"-->
-        <!--materialdesign:animate="true"-->
-        <!--materialdesign:iconDrawable="@drawable/dingdan" />-->
-
-        <!--<com.gc.materialdesign.views.ButtonFloat-->
-        <!--android:id="@+id/baoxiu"-->
-        <!--android:layout_width="48dp"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:layout_above="@id/dingdan"-->
-        <!--android:layout_alignLeft="@id/dingdan"-->
-        <!--android:layout_marginBottom="16dp"-->
-        <!--android:layout_marginRight="16dp"-->
-        <!--android:background="@color/main_color_dark"-->
-        <!--android:visibility="gone"-->
-        <!--materialdesign:animate="true"-->
-        <!--materialdesign:iconDrawable="@drawable/baoxiu" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/tv_tips_baoxiu"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignBottom="@id/baoxiu"-->
-        <!--android:layout_marginBottom="36dp"-->
-        <!--android:layout_marginRight="16dp"-->
-        <!--android:layout_toLeftOf="@id/baoxiu"-->
-        <!--android:layout_toStartOf="@id/baoxiu"-->
-        <!--android:gravity="center"-->
-        <!--android:text="工具报修"-->
-        <!--android:textColor="@color/main_color_dark"-->
-        <!--android:textSize="16sp"-->
-        <!--android:visibility="gone" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/tv_tips_dingdan"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignBottom="@id/dingdan"-->
-        <!--android:layout_marginBottom="36dp"-->
-        <!--android:layout_marginRight="16dp"-->
-        <!--android:layout_toLeftOf="@id/dingdan"-->
-        <!--android:layout_toStartOf="@id/dingdan"-->
-        <!--android:gravity="center"-->
-        <!--android:text="预接订单"-->
-        <!--android:textColor="@color/main_color_dark"-->
-        <!--android:textSize="16sp"-->
-        <!--android:visibility="gone" />-->
-
-        <TextView
-            android:id="@+id/tv_tips_shuaxin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/shuaxin"
-            android:layout_marginBottom="36dp"
-            android:layout_marginRight="16dp"
-            android:layout_toLeftOf="@id/shuaxin"
-            android:layout_toStartOf="@id/shuaxin"
-            android:gravity="center"
-            android:text="新增清单"
-            android:textColor="@color/main_color_dark"
-            android:textSize="16sp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/tv_tips_kefu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/kefu"
-            android:layout_marginBottom="36dp"
-            android:layout_marginRight="16dp"
-            android:layout_toLeftOf="@id/kefu"
-            android:layout_toStartOf="@id/kefu"
-            android:gravity="center"
-            android:text="新增任务"
-            android:textColor="@color/main_color_dark"
-            android:textSize="16sp"
-            android:visibility="gone" />
-
-
-        <TextView
-            android:id="@+id/tv_tips_open"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/open"
-            android:layout_marginBottom="36dp"
-            android:layout_marginRight="16dp"
-            android:layout_toLeftOf="@id/open"
-            android:layout_toStartOf="@id/open"
-            android:gravity="center"
-            android:text="返回"
-            android:textColor="@color/main_color_dark"
-            android:textSize="16sp"
-            android:visibility="gone" />
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

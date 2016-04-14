@@ -21,7 +21,9 @@
         android:background="@color/main_color_light" />
 
 
-    <include layout="@layout/wofuzede_item" />
+    <include
+        android:id="@+id/renwu_test_click"
+        layout="@layout/wofuzede_item" />
 
     <include layout="@layout/wofuzede_item" />
 

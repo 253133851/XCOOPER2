@@ -29,8 +29,9 @@ public class xiangmuAddFragment extends MyFragment {
     public void Init_View(View view) {
 
         chengyuan_add_test_click = (LinearLayout) view.findViewById(R.id.chengyuan_add_test_click);
-        chengyuan_Add= (RelativeLayout) view.findViewById(R.id.rl_chengyuanAdd);
+        chengyuan_Add = (RelativeLayout) view.findViewById(R.id.rl_chengyuanAdd);
         chengyuan_Add_tv = (TextView) view.findViewById(R.id.tv_chengyuan_Add);
+
     }
 
     public void Init_Listener() {
@@ -39,8 +40,8 @@ public class xiangmuAddFragment extends MyFragment {
     }
 
     public void Init_Data() {
-//        setTitle("新增项目");
         setTitle(null);
+        setNoFloatButtons(true);
     }
 
     public void onClick(View view) {

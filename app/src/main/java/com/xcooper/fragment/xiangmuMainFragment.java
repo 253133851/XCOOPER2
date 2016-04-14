@@ -34,12 +34,6 @@ public class xiangmuMainFragment extends MyFragment {
         setLAYOUT(R.layout.xiangmuxiangxi);
     }
 
-    private ButtonFloat open, shuaxin, kefu;
-    private TextView tips_open, tips_shuaxin, tips_kefu;
-    private ImageView open_gray;
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private Toolbar mToolbar;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
@@ -50,19 +44,6 @@ public class xiangmuMainFragment extends MyFragment {
 
     public void Init_View(View view) {
 
-        open = (ButtonFloat) view.findViewById(R.id.open);
-//        dingdan = (ButtonFloat) view.findViewById(R.id.dingdan);
-//        baoxiu = (ButtonFloat) view.findViewById(R.id.baoxiu);
-//        shuaxin = (ButtonFloat) view.findViewById(R.id.shuaxin);
-//        kefu = (ButtonFloat) view.findViewById(R.id.kefu);
-//        tips_open = (TextView) view.findViewById(R.id.tv_tips_open);
-//        tips_dingdan = (TextView) view.findViewById(R.id.tv_tips_dingdan);
-//        tips_baoxiu = (TextView) view.findViewById(R.id.tv_tips_baoxiu);
-//        tips_shuaxin = (TextView) view.findViewById(R.id.tv_tips_shuaxin);
-//        tips_kefu = (TextView) view.findViewById(R.id.tv_tips_kefu);
-//        open_gray = (ImageView) view.findViewById(R.id.open_gray);
-
-
         mViewPager = (ViewPager) view.findViewById(R.id.vp_view);
         mTabLayout = (TabLayout) view.findViewById(R.id.tabs);
     }
@@ -70,6 +51,7 @@ public class xiangmuMainFragment extends MyFragment {
     public void Init_Data() {
 
         setTitle("项目");
+        setNoFloatButtons(true);
 
         mViewList = new ArrayList<>();//页卡视图集合
         mTitleList = new ArrayList<>();//页卡视图集合
@@ -101,7 +83,7 @@ public class xiangmuMainFragment extends MyFragment {
     }
 
     public void Init_Listener() {
-        addClick(open);
+
     }
 
     //ViewPager适配器
@@ -142,8 +124,7 @@ public class xiangmuMainFragment extends MyFragment {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.open:
-                break;
+
         }
     }
 

@@ -16,7 +16,6 @@ public class renwuxiangqingFragment extends MyFragment {
     public void Pre() {
         if (Fragment == null) Fragment = Fragment_Center.getRenwuxiangqingFragment();
         setLAYOUT(R.layout.renwuxiangqing);
-//        setLAYOUT(R.layout.fanqiezhong_xiangqing);
     }
 
     RoundProgressBar progress;
@@ -27,6 +26,7 @@ public class renwuxiangqingFragment extends MyFragment {
 
     public void Init_Data() {
         setTitle(null);
+        setNoFloatButtons(true);
         progress.setText(6000);
     }
 

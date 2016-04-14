@@ -49,14 +49,6 @@ public class mainFragment extends MyFragment {
         setLAYOUT(R.layout.activity_main);
     }
 
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private Toolbar mToolbar;
-    private ButtonFloat open, shuaxin, renwuxinjian;
-    private TextView tips_open, tips_shuaxin, tips_renwuxinjian;
-    private ImageView open_gray;
-
-
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
@@ -70,19 +62,6 @@ public class mainFragment extends MyFragment {
     @Override
     public void Init_View(View view) {
 
-        open = (ButtonFloat) view.findViewById(R.id.open);
-//        dingdan = (ButtonFloat) view.findViewById(R.id.dingdan);
-//        baoxiu = (ButtonFloat) view.findViewById(R.id.baoxiu);
-        shuaxin = (ButtonFloat) view.findViewById(R.id.shuaxin);
-        renwuxinjian = (ButtonFloat) view.findViewById(R.id.renwuxinjian);
-        tips_open = (TextView) view.findViewById(R.id.tv_tips_open);
-//        tips_dingdan = (TextView) view.findViewById(R.id.tv_tips_dingdan);
-//        tips_baoxiu = (TextView) view.findViewById(R.id.tv_tips_baoxiu);
-        tips_shuaxin = (TextView) view.findViewById(R.id.tv_tips_shuaxin);
-        tips_renwuxinjian = (TextView) view.findViewById(R.id.tv_tips_renwuxinjian);
-        open_gray = (ImageView) view.findViewById(R.id.open_gray);
-
-
         mViewPager = (ViewPager) view.findViewById(R.id.vp_view);
         mTabLayout = (TabLayout) view.findViewById(R.id.tabs);
 
@@ -93,6 +72,13 @@ public class mainFragment extends MyFragment {
 
         renwu_test_click = (RevealLayout) view1.findViewById(R.id.renwu_test_click);
 
+        mainActivity.setFloatButtons(3, new int[]{
+                R.drawable.open,
+                R.drawable.shuaxin,
+                R.drawable.baoxiu,
+        }, new String[]{
+                "返回", "新建任务", "番茄钟"
+        });
     }
 
     SimpleAdapter adapter;
@@ -106,7 +92,6 @@ public class mainFragment extends MyFragment {
 
         mViewList = new ArrayList<>();//页卡视图集合
         mTitleList = new ArrayList<>();//页卡视图集合
-
 
         //添加页卡视图
         mViewList.add(view1);
@@ -132,125 +117,16 @@ public class mainFragment extends MyFragment {
 
     @Override
     public void Init_Listener() {
-        addClick(open);
-        addClick(open_gray);
-        addClick(shuaxin);
         addClick(renwu_test_click);
-        addClick(renwuxinjian);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.open:
-                float_button_click();
-                break;
-            case R.id.open_gray:
-                float_button_click();
-                break;
-            case R.id.shuaxin:
-                break;
             case R.id.renwu_test_click:
                 Fragment_Center.loadRenwuXiangqing();
                 break;
-            case R.id.renwuxinjian:
-                Fragment_Center.loadRenwuXinjian(Fragment_Center.mainFragment_num);
-                break;
         }
-    }
-
-
-    /**
-     * 悬浮按钮点击事件
-     */
-    public void float_button_click() {
-        set_anim();
-    }
-
-
-    public void set_anim() {
-        Animation animation_open = AnimationUtils.loadAnimation(Constant.context, R.anim.open_anim);
-        Animation animation_close = AnimationUtils.loadAnimation(Constant.context, R.anim.close_anim);
-        Animation alphaAnimation = null;
-
-        if (open.getTag().equals("close")) {
-            alphaAnimation = new AlphaAnimation(0.3f, 1.0f);
-            open_gray.setVisibility(View.VISIBLE);
-            alphaAnimation.setDuration(251);
-            open_gray.setAnimation(alphaAnimation);
-            alphaAnimation.startNow();
-            open.startAnimation(animation_open);
-            start_anim(tips_open, tips_open, 0);
-            start_anim(renwuxinjian, tips_renwuxinjian, 0);
-            start_anim(shuaxin, tips_shuaxin, 50);
-//            start_anim(dingdan, tips_dingdan, 100);
-//            start_anim(baoxiu, tips_baoxiu, 150);
-        } else if (open.getTag().equals("open")) {
-            alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
-            alphaAnimation.setDuration(100);
-            alphaAnimation.setStartOffset(250);//执行前的等待时间
-            open_gray.setAnimation(alphaAnimation);
-            alphaAnimation.startNow();
-            open.startAnimation(animation_close);
-            start_anim(tips_open, tips_open, 150);
-            start_anim(renwuxinjian, tips_renwuxinjian, 150);
-            start_anim(shuaxin, tips_shuaxin, 100);
-//            start_anim(dingdan, tips_dingdan, 50);
-//            start_anim(baoxiu, tips_baoxiu, 0);
-        }
-
-        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                if (open.getTag().equals("close")) {
-                    open.setTag("open");
-                } else if (open.getTag().equals("open")) {
-                    open.setTag("close");
-                    open_gray.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-
-    }
-
-    /**
-     * floatbutton点击动画
-     *
-     * @param view
-     * @param tips
-     * @param startOffset
-     */
-    public void start_anim(View view, View tips, long startOffset) {
-        Animation animation;
-        if (open.getTag().equals("close")) {
-            //初始化
-            animation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0);
-            //设置动画时间
-            view.setVisibility(View.VISIBLE);
-            tips.setVisibility(View.VISIBLE);
-        } else {
-            //初始化
-            animation = new ScaleAnimation(1.0f, 0.0f, 1.0f, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0);
-            //设置动画时间
-            view.setVisibility(View.GONE);
-            tips.setVisibility(View.GONE);
-        }
-        animation.setDuration(100);
-        view.setAnimation(animation);
-        tips.setAnimation(animation);
-        animation.setStartOffset(startOffset);//执行前的等待时间
-        animation.startNow();
-
     }
 
     public void load_Data() {
