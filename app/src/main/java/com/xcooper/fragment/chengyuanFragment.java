@@ -39,8 +39,12 @@ public class chengyuanFragment extends MyFragment {
         setLAYOUT(R.layout.chengyuan);
     }
 
-    public void Init_View(View view) {
+    RelativeLayout chengyuan_Add;
+    TextView chengyuan_Add_tv;
 
+    public void Init_View(View view) {
+        chengyuan_Add = (RelativeLayout) view.findViewById(R.id.rl_chengyuanAdd);
+        chengyuan_Add_tv = (TextView) view.findViewById(R.id.tv_chengyuan_Add);
     }
 
     public void Init_Data() {
@@ -48,13 +52,24 @@ public class chengyuanFragment extends MyFragment {
     }
 
     public void Init_Listener() {
+
+        addClick(chengyuan_Add_tv);
+
         setFloatButtons(3, new int[]{R.drawable.open, R.drawable.kefu, R.drawable.dingdan},
                 new String[]{"返回", "新增成员", "管理成员"});
+        getFloatButtons(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chengyuan_Add.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-
+            case R.id.tv_chengyuan_Add:
+                chengyuan_Add.setVisibility(View.GONE);;
+                break;
         }
     }
 

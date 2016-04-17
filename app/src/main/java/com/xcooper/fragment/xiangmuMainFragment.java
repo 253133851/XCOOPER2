@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
@@ -17,6 +18,7 @@ import com.xcooper.Constant;
 import com.xcooper.Method_Center;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
+import com.xcooper.view.RevealLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,16 +44,27 @@ public class xiangmuMainFragment extends MyFragment {
     private View view1, view2, view3, view4, view5;//页卡视图
     private List<View> mViewList = new ArrayList<>();//页卡视图集合
 
+    private RelativeLayout rl_taolunAdd;
+    private TextView tv_taolun_Add;
+
     public void Init_View(View view) {
 
         mViewPager = (ViewPager) view.findViewById(R.id.vp_view);
         mTabLayout = (TabLayout) view.findViewById(R.id.tabs);
+
+        rl_taolunAdd = (RelativeLayout) view.findViewById(R.id.rl_taolunAdd);
+        tv_taolun_Add = (TextView) view.findViewById(R.id.tv_taolun_Add);
+
     }
 
     public void Init_Data() {
 
         setTitle("项目");
-        setNoFloatButtons(true);
+        setFloatButtons(4, new int[]{
+                R.drawable.open, R.drawable.dingdan, R.drawable.baoxiu, R.drawable.kefu
+        }, new String[]{
+                "返回", "新建任务", "新建讨论", "上传文档"
+        });
 
         mViewList = new ArrayList<>();//页卡视图集合
         mTitleList = new ArrayList<>();//页卡视图集合
@@ -68,7 +81,7 @@ public class xiangmuMainFragment extends MyFragment {
 
         //添加页卡标题
         mTitleList.add("任务");
-        mTitleList.add("未读");
+        mTitleList.add("讨论");
         mTitleList.add("文档");
 
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);//设置tab模式，当前为系统默认模式
@@ -83,8 +96,22 @@ public class xiangmuMainFragment extends MyFragment {
     }
 
     public void Init_Listener() {
-
+        addClick(tv_taolun_Add);
+        getFloatButtons(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment_Center.loadRenwuXinjian(Fragment_Center.xiangmuMainFragment_num);
+            }
+        });
+        getFloatButtons(3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rl_taolunAdd.setVisibility(View.VISIBLE);
+                mainActivity.set_anim();
+            }
+        });
     }
+
 
     //ViewPager适配器
     class MyPagerAdapter extends PagerAdapter {
@@ -124,7 +151,9 @@ public class xiangmuMainFragment extends MyFragment {
 
     public void onClick(View view) {
         switch (view.getId()) {
-
+            case R.id.tv_taolun_Add:
+                rl_taolunAdd.setVisibility(View.GONE);
+                break;
         }
     }
 

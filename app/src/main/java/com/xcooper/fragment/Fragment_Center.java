@@ -23,7 +23,7 @@ public class Fragment_Center {
     public static int chengyuanAddFragment_num = 9;
     public static int renwuxinjianFragment_num = 10;
     public static int fanqiezhongFragment_num = 11;
-    public static int fanqiezhongXiangqingFragment_num = 11;
+    public static int fanqiezhongXiangqingFragment_num = 12;
 
     //成员界面
     public static void loadChengyuan() {
@@ -89,9 +89,9 @@ public class Fragment_Center {
         Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getFanqiezhongFragment(), "fanqiezhong", null, 0);
     }
 
-    public static void loadfanqiezhongXiangqing() {
+    public static void loadfanqiezhongXiangqing(int from) {
         Constant.Reccent_Frag = Fragment_Center.fanqiezhongXiangqingFragment_num;
-        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getFanqiezhongXiangqingFragment(), "fanqiezhongXiangqing", null, 0);
+        Method_Center.turnToFragment(Constant.activity.getFragmentManager(), Fragment_Center.getFanqiezhongXiangqingFragment(), "fanqiezhongXiangqing", null, from);
     }
 
     //每一个界面 获取实例对象的方法

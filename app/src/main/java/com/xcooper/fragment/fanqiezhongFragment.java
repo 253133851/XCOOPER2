@@ -4,6 +4,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.xcooper.Constant;
 import com.xcooper.R;
@@ -34,7 +36,7 @@ public class fanqiezhongFragment extends MyFragment {
     private View view1, view2, view3, view4, view5;//页卡视图
     private List<View> mViewList = new ArrayList<>();//页卡视图集合
 
-    RevealLayout text_fanqiezhong_click;
+    TextView text_fanqiezhong_click;
 
     public void Init_View(View view) {
 
@@ -45,15 +47,16 @@ public class fanqiezhongFragment extends MyFragment {
         view1 = mInflater.inflate(R.layout.fanqiezhong_renwu, null);
         view2 = mInflater.inflate(R.layout.fanqiezhong_lishi, null);
 
-        text_fanqiezhong_click = (RevealLayout) view1.findViewById(R.id.text_fanqiezhong_click);
+        text_fanqiezhong_click = (TextView) view1.findViewById(R.id.text_fanqiezhong_click);
 
     }
 
     public void Init_Data() {
 
         setTitle("番茄钟");
-
-        setNoFloatButtons(true);
+        setFloatButtons(2, new int[]{R.drawable.open, R.drawable.kefu}, new String[]{
+                "返回", "新增番茄钟"
+        });
 
         mViewList = new ArrayList<>();//页卡视图集合
         mTitleList = new ArrayList<>();//页卡视图集合
@@ -80,6 +83,13 @@ public class fanqiezhongFragment extends MyFragment {
     @Override
     public void Init_Listener() {
         addClick(text_fanqiezhong_click);
+        getFloatButtons(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment_Center.loadfanqiezhongXiangqing(Fragment_Center.fanqiezhongFragment_num);
+            }
+        });
+
     }
 
     public void onClick(View view) {
@@ -87,7 +97,7 @@ public class fanqiezhongFragment extends MyFragment {
             case R.id.open:
                 break;
             case R.id.text_fanqiezhong_click:
-                Fragment_Center.loadfanqiezhongXiangqing();
+                Fragment_Center.loadfanqiezhongXiangqing(Fragment_Center.fanqiezhongFragment_num);
                 break;
         }
     }

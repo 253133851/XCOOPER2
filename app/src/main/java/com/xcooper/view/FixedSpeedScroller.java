@@ -1,4 +1,4 @@
-package com.xcooper;
+package com.xcooper.view;
 
 import android.content.Context;
 import android.view.animation.Interpolator;

@@ -28,21 +28,21 @@ public class xiangmuFragment extends MyFragment {
 
         xiangmu_test_click = (LinearLayout) view.findViewById(R.id.xiangmu_test_click);
 
-        setFloatButtons(2, new int[]{R.drawable.kefu, R.drawable.dingdan}, new String[]{
-                "客服", "订单"
+    }
+
+    public void Init_Data() {
+        setTitle("项目列表");
+
+        setFloatButtons(2, new int[]{R.drawable.open, R.drawable.kefu}, new String[]{
+                "返回", "新增项目"
         });
 
         getFloatButtons(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment_Center.loadxiangmuAdd();
-                mainActivity.set_anim();
             }
         });
-    }
-
-    public void Init_Data() {
-        setTitle("项目列表");
     }
 
     public void Init_Listener() {

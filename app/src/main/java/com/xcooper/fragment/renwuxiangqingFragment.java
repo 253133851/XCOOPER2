@@ -18,16 +18,12 @@ public class renwuxiangqingFragment extends MyFragment {
         setLAYOUT(R.layout.renwuxiangqing);
     }
 
-    RoundProgressBar progress;
-
     public void Init_View(View view) {
-        progress = (RoundProgressBar) view.findViewById(R.id.roundProgressBar2);
     }
 
     public void Init_Data() {
         setTitle(null);
         setNoFloatButtons(true);
-        progress.setText(6000);
     }
 
     public void onClick(View view) {

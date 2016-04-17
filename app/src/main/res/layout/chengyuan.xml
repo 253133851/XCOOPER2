@@ -140,6 +140,7 @@
 
     </LinearLayout>
 
-    <include layout="@layout/chengyuan_add" />
+    <include
+        layout="@layout/chengyuan_add" />
 
 </FrameLayout>

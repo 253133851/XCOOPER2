@@ -60,6 +60,7 @@ public class mainActivity extends ActionBarActivity {
      * 初始化数据
      */
     public void initDatas() {
+
         BEAN_INSTANSE.initBean(this);
 
         Constant.activity.setSupportActionBar(mToolbar);
@@ -217,7 +218,7 @@ public class mainActivity extends ActionBarActivity {
             set_anim();
         }
         ButtonFloatLength = length;
-        if (length > 1) {
+        if (length >= 1) {
             if (!view0.isShow()) {
                 view0.show();
             }
@@ -333,10 +334,9 @@ public class mainActivity extends ActionBarActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-
     @Override
     public void onBackPressed() {
-
+        System.out.println("当前 " + Constant.Reccent_Frag);
         if (Constant.Reccent_Frag == Fragment_Center.chengyuanFragment_num ||
                 Constant.Reccent_Frag == Fragment_Center.tongzhiFragment_num ||
                 Constant.Reccent_Frag == Fragment_Center.dongtaiFragment_num ||
@@ -354,8 +354,13 @@ public class mainActivity extends ActionBarActivity {
             getFragmentManager().popBackStack();
             Constant.Reccent_Frag = Fragment_Center.xiangmuAddFragment_num;
         } else if (Constant.Reccent_Frag == Fragment_Center.fanqiezhongXiangqingFragment_num) {
-            getFragmentManager().popBackStack();
-            Constant.Reccent_Frag = Fragment_Center.fanqiezhongFragment_num;
+            System.out.println(Fragment_Center.getFanqiezhongXiangqingFragment().getFROM());
+            if (Fragment_Center.getFanqiezhongXiangqingFragment().getFROM() == Fragment_Center.mainFragment_num) {
+                Fragment_Center.loadRenWu();
+            } else if (Fragment_Center.getFanqiezhongXiangqingFragment().getFROM() == Fragment_Center.fanqiezhongFragment_num) {
+                getFragmentManager().popBackStack();
+                Constant.Reccent_Frag = Fragment_Center.fanqiezhongFragment_num;
+            }
         } else if (Constant.Reccent_Frag == Fragment_Center.renwuxinjianFragment_num) {
             if (Fragment_Center.getRenwuxinjianFragment().getFROM() == Fragment_Center.mainFragment_num) {
                 Fragment_Center.loadRenWu();

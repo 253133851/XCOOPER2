@@ -118,6 +118,18 @@ public class mainFragment extends MyFragment {
     @Override
     public void Init_Listener() {
         addClick(renwu_test_click);
+        getFloatButtons(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment_Center.loadRenwuXinjian(Fragment_Center.mainFragment_num);
+            }
+        });
+        getFloatButtons(3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment_Center.loadfanqiezhongXiangqing(Fragment_Center.mainFragment_num);
+            }
+        });
     }
 
     @Override

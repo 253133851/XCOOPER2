@@ -58,18 +58,11 @@ public class Method_Center {
         MyFragment fragment = (MyFragment) fm.findFragmentByTag(tag);
         boolean isFragmentExist = true;
         if (fragment == null) {
-//            try {
             isFragmentExist = false;
-//                fragment = (MyFragment) fragmentClass.newInstance();
             fragment = frag;
             Bundle bundle = new Bundle();
             bundle.putInt("from", from);
             fragment.setArguments(bundle);
-//            } catch (java.lang.InstantiationException e) {
-//                e.printStackTrace();
-//            } catch (IllegalAccessException e) {
-//                e.printStackTrace();
-//            }
         }
         if (fragment.isAdded()) {
             return;
