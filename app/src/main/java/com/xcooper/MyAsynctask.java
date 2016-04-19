@@ -1,6 +1,7 @@
 package com.xcooper;
 
 import android.os.AsyncTask;
+
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
@@ -8,6 +9,7 @@ import com.xcooper.Bean.BEAN_INSTANSE;
 import com.xcooper.Common.data.PostDataStringRequest;
 
 import net.sf.json.JSONObject;
+
 import java.util.Map;
 
 
@@ -41,6 +43,7 @@ public class MyAsynctask extends AsyncTask<Void, Void, String> implements OK, Re
                 OK(json);
                 break;
         }
+
     }
 
     @Override

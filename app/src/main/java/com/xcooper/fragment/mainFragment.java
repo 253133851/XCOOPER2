@@ -146,7 +146,7 @@ public class mainFragment extends MyFragment {
         map.put("time", "2016-01-06");
         map.put("confirm", "-1");
         map.put("done", "-1");
-        new MyAsynctask(map, ENV.URL_GET_ORDER_LIST) {
+        new MyAsynctask(map, ENV.URL_ADD_TASK) {
             public void OK(JSONObject code) {
 
                 JSONObject json = code.getJSONObject("data");
