@@ -5,14 +5,18 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.listeners.ActionClickListener;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.xcooper.activity.mainActivity;
 import com.xcooper.fragment.MyFragment;
+
+import java.util.Calendar;
 
 public class Method_Center {
 
@@ -97,6 +101,28 @@ public class Method_Center {
         }
     }
 
+    public static String datePick = "";
+
+    public static void DatePicker(String title) {
+
+        Calendar now = Calendar.getInstance();
+        DatePickerDialog dpd = DatePickerDialog.newInstance(
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePickerDialog datePickerDialog, int year, int monthOfYear, int dayOfMonth) {
+                        datePick = +dayOfMonth + "-" + (++monthOfYear) + "-" + year;
+                    }
+                },
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH)
+        );
+        dpd.setThemeDark(true);
+
+        dpd.setTitle(title);
+
+        dpd.show(Constant.activity.getFragmentManager(), "Datepickerdialog");
+    }
 
 }
 

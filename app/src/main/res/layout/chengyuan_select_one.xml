@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_chengyuanAdd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#77000000"
+    android:paddingBottom="70dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingTop="100dp"
+    android:visibility="gone"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color_dark"
+            android:padding="12dp"
+            android:text="选择成员"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/chengyuan_item3" />
+
+                <include layout="@layout/chengyuan_item3" />
+
+                <include layout="@layout/chengyuan_item3" />
+
+                <include layout="@layout/chengyuan_item3" />
+
+                <include layout="@layout/chengyuan_item3" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_color_light" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tv_chengyuan_Add"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@color/main_color_dark"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

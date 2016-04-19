@@ -170,4 +170,6 @@
 
     <include layout="@layout/chengyuan_add" />
 
+    <include layout="@layout/chengyuan_select_one" />
+
 </FrameLayout>
