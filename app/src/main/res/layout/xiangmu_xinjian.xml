@@ -16,6 +16,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/xiangmu_add_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp"
@@ -49,158 +50,152 @@
                 android:orientation="vertical">
 
 
-                <!--<GridView-->
+                <GridView
+                    android:id="@+id/gv_xiangmu_chengyuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="4">
+
+                </GridView>
+                <!--<GridLayout-->
                 <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:numColumns="5">-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:alignmentMode="alignBounds"-->
+                <!--android:columnCount="4">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="72dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:layout_margin="6dp"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<com.xcooper.view.CircleImg-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginBottom="6dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:src="@color/main_color_dark" />-->
 
                 <!--<TextView-->
-                <!--android:layout_width="100dp"-->
-                <!--android:layout_height="100dp"-->
-                <!--android:text="21441"-->
-                <!--android:textColor="@color/main_color_dark" />-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="蜡笔小新"-->
+                <!--android:textColor="@color/main_color_dark"-->
+                <!--android:textSize="14sp" />-->
 
-                <!--</GridView>-->
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:alignmentMode="alignBounds"
-                    android:columnCount="4">
+                <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_width="72dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="6dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                <!--<LinearLayout-->
+                <!--android:layout_width="72dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:layout_margin="6dp"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
 
-                        <com.xcooper.view.CircleImg
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="6dp"
-                            android:layout_marginTop="12dp"
-                            android:src="@color/main_color_dark" />
+                <!--<com.xcooper.view.CircleImg-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginBottom="6dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:src="@color/main_color_dark" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:gravity="center"
-                            android:text="蜡笔小新"
-                            android:textColor="@color/main_color_dark"
-                            android:textSize="14sp" />
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="蜡笔小新"-->
+                <!--android:textColor="@color/main_color_dark"-->
+                <!--android:textSize="14sp" />-->
 
-                    </LinearLayout>
+                <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_width="72dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="6dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                <!--<LinearLayout-->
+                <!--android:layout_width="72dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:layout_margin="6dp"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
 
-                        <com.xcooper.view.CircleImg
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="6dp"
-                            android:layout_marginTop="12dp"
-                            android:src="@color/main_color_dark" />
+                <!--<com.xcooper.view.CircleImg-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginBottom="6dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:src="@color/main_color_dark" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:gravity="center"
-                            android:text="蜡笔小新"
-                            android:textColor="@color/main_color_dark"
-                            android:textSize="14sp" />
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="蜡笔小新"-->
+                <!--android:textColor="@color/main_color_dark"-->
+                <!--android:textSize="14sp" />-->
 
-                    </LinearLayout>
+                <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_width="72dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="6dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                <!--<LinearLayout-->
+                <!--android:layout_width="72dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:layout_margin="6dp"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
 
-                        <com.xcooper.view.CircleImg
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="6dp"
-                            android:layout_marginTop="12dp"
-                            android:src="@color/main_color_dark" />
+                <!--<com.xcooper.view.CircleImg-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginBottom="6dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:src="@color/main_color_dark" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:gravity="center"
-                            android:text="蜡笔小新"
-                            android:textColor="@color/main_color_dark"
-                            android:textSize="14sp" />
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="蜡笔小新"-->
+                <!--android:textColor="@color/main_color_dark"-->
+                <!--android:textSize="14sp" />-->
 
-                    </LinearLayout>
+                <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_width="72dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="6dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                <!--<LinearLayout-->
+                <!--android:id="@+id/chengyuan_add_test_click"-->
+                <!--android:layout_width="72dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_columnWeight="1"-->
+                <!--android:layout_margin="6dp"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
 
-                        <com.xcooper.view.CircleImg
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="6dp"
-                            android:layout_marginTop="12dp"
-                            android:src="@color/main_color_dark" />
+                <!--<com.xcooper.view.CircleImg-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_height="48dp"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginBottom="6dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:src="@drawable/bg_main" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:gravity="center"
-                            android:text="蜡笔小新"
-                            android:textColor="@color/main_color_dark"
-                            android:textSize="14sp" />
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:gravity="center"-->
+                <!--android:text="新增成员"-->
+                <!--android:textColor="@color/main_color_dark"-->
+                <!--android:textSize="14sp" />-->
 
-                    </LinearLayout>
+                <!--</LinearLayout>-->
 
-                    <LinearLayout
-                        android:id="@+id/chengyuan_add_test_click"
-                        android:layout_width="72dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="6dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.xcooper.view.CircleImg
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginBottom="6dp"
-                            android:layout_marginTop="12dp"
-                            android:src="@drawable/bg_main" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:gravity="center"
-                            android:text="新增成员"
-                            android:textColor="@color/main_color_dark"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </GridLayout>
-
+                <!--</GridLayout>-->
 
             </LinearLayout>
         </RelativeLayout>
@@ -210,6 +205,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/xiangmu_add_submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/main_color_dark"

@@ -6,4 +6,6 @@ public class ENV {
 
     public static String URL_ADD_TASK = URL_IP_fuwu + "/do?action=task.task!CAjaxAddTask";
 
+    public static String URL_ADD_PROJECT = URL_IP_fuwu + "/do?action=project.project!CAjaxAddProject";
+
 }

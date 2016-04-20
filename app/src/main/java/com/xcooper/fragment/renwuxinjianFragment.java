@@ -69,7 +69,6 @@ public class renwuxinjianFragment extends MyFragment {
         map.put("taskInfo", renwu_add_info.getText().toString());
         new MyAsynctask(map, ENV.URL_ADD_TASK) {
             public void OK(JSONObject code) {
-                System.out.println(112);
                 Method_Center.show_Toast("添加成功", true);
             }
         }.execute();
