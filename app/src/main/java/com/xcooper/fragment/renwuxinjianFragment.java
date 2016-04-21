@@ -2,6 +2,7 @@ package com.xcooper.fragment;
 
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xcooper.ENV;
@@ -30,13 +31,20 @@ public class renwuxinjianFragment extends MyFragment {
     }
 
     EditText renwu_add_name, renwu_add_info;
-    TextView renwu_add_submit;
+    TextView renwu_add_submit,tv_renwu_set_guanzuren,tv_renwu_set_pxiangmu,tv_renwu_set_ren8shijian;
+    RelativeLayout renwu_add_xiangmu_select, renwu_add_fuzeren_select, renwu_add_guanzuren_add;
 
     public void Init_View(View view) {
 
         renwu_add_submit = (TextView) view.findViewById(R.id.renwu_add_submit);
+        tv_renwu_set_guanzuren = (TextView) view.findViewById(R.id.tv_renwu_set_guanzuren);
+        tv_renwu_set_pxiangmu = (TextView) view.findViewById(R.id.tv_renwu_set_pxiangmu);
+        tv_renwu_set_ren8shijian = (TextView) view.findViewById(R.id.tv_renwu_set_ren8shijian);
         renwu_add_info = (EditText) view.findViewById(R.id.renwu_add_info);
         renwu_add_name = (EditText) view.findViewById(R.id.renwu_add_name);
+        renwu_add_xiangmu_select = (RelativeLayout) view.findViewById(R.id.renwu_add_xiangmu_select);
+        renwu_add_fuzeren_select = (RelativeLayout) view.findViewById(R.id.renwu_add_fuzeren_select);
+        renwu_add_guanzuren_add = (RelativeLayout) view.findViewById(R.id.renwu_add_guanzuren_add);
 
     }
 
@@ -47,12 +55,24 @@ public class renwuxinjianFragment extends MyFragment {
 
     public void Init_Listener() {
         addClick(renwu_add_submit);
+        addClick(tv_renwu_set_guanzuren);
+        addClick(tv_renwu_set_pxiangmu);
+        addClick(tv_renwu_set_ren8shijian);
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.renwu_add_submit:
                 AddTask();
+                break;
+            case R.id.tv_renwu_set_guanzuren:
+                renwu_add_guanzuren_add.setVisibility(View.VISIBLE);
+                break;
+            case R.id.tv_renwu_set_pxiangmu:
+                renwu_add_xiangmu_select.setVisibility(View.VISIBLE);
+                break;
+            case R.id.tv_renwu_set_ren8shijian:
+                renwu_add_fuzeren_select.setVisibility(View.VISIBLE);
                 break;
         }
     }

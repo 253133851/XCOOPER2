@@ -168,8 +168,16 @@
 
     </LinearLayout>
 
-    <include layout="@layout/chengyuan_add" />
+    <include
+        android:id="@+id/renwu_add_guanzuren_add"
+        layout="@layout/chengyuan_add" />
 
-    <include layout="@layout/chengyuan_select_one" />
+    <include
+        android:id="@+id/renwu_add_fuzeren_select"
+        layout="@layout/chengyuan_select_one" />
+
+    <include
+        android:id="@+id/renwu_add_xiangmu_select"
+        layout="@layout/xiangmu_select_one" />
 
 </FrameLayout>
