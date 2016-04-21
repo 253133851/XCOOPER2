@@ -14,8 +14,7 @@
         <android.support.v4.widget.DrawerLayout
             android:id="@+id/drawer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-         >
+            android:layout_height="match_parent">
 
             <FrameLayout
                 android:id="@+id/fl_main"
@@ -24,7 +23,6 @@
                 android:background="#f9f9f9">
 
             </FrameLayout>
-
 
             <LinearLayout
                 android:id="@+id/drawer_view"
@@ -51,11 +49,11 @@
             android:layout_height="48dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_gravity="bottom|right"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="24dp"
             android:background="@color/main_color_dark"
             android:tag="close"
-            materialdesign:animate="true" />
+            materialdesign:animate="true"
+            materialdesign:icon="@drawable/open" />
 
         <com.gc.materialdesign.views.ButtonFloat
             android:id="@+id/view1"

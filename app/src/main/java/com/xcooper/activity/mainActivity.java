@@ -219,13 +219,15 @@ public class mainActivity extends ActionBarActivity {
         }
         ButtonFloatLength = length;
         if (length >= 1) {
-            if (!view0.isShow()) {
-                view0.show();
-            }
+            view0.setVisibility(View.VISIBLE);
+//            if (!view0.isShow()) {
+//                view0.show();
+//            }
         } else {
-            if (view0.isShow()) {
-                view0.hide();
-            }
+            view0.setVisibility(View.GONE);
+//            if (view0.isShow()) {
+//                view0.hide();
+//            }
         }
         for (int i = 0; i < ButtonFloatLength; i++) {
             if (pics.length >= length && tips.length >= length) {
