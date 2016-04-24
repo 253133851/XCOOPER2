@@ -108,11 +108,8 @@ public class ButtonFloat extends Button {
 
             @Override
             public void run() {
-                System.out.println(ViewHelper.getY(view));
                 showPosition = ViewHelper.getY(view) - Utils.dpToPx(24, getResources());
                 hidePosition = ViewHelper.getY(view) + getHeight() * 3;
-                System.out.println(showPosition);
-                System.out.println(hidePosition);
                 if (animate) {
                     ViewHelper.setY(ButtonFloat.this, hidePosition);
                     show();

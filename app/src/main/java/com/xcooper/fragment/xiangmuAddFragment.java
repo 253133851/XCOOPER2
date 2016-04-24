@@ -15,8 +15,7 @@ import com.xcooper.ENV;
 import com.xcooper.Method_Center;
 import com.xcooper.MyAsynctask;
 import com.xcooper.R;
-import com.xcooper.activity.mainActivity;
-import com.xcooper.adapter.XiangmuChengyuanadapter;
+import com.xcooper.adapter.XiangmuChengyuanAdapter;
 
 import net.sf.json.JSONObject;
 
@@ -63,7 +62,7 @@ public class xiangmuAddFragment extends MyFragment {
         map.put("name", "新增成员");
         chengyuanList.add(map);
 
-        gv_xiangmu_chengyuan.setAdapter(new XiangmuChengyuanadapter(chengyuanList, Constant.activity));
+        gv_xiangmu_chengyuan.setAdapter(new XiangmuChengyuanAdapter(chengyuanList, Constant.activity));
         gv_xiangmu_chengyuan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

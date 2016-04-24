@@ -44,13 +44,10 @@ public class MemberBean {
     /**
      * query
      */
-    public List<MemberVO> query(String date, int state, int confirm) {
+    public List<MemberVO> query() {
         List<MemberVO> list = new ArrayList<>();
         try {
             QueryBuilder qb = MemberVOs.queryBuilder();
-            qb.where().eq("GOHOME_DATE", date)
-                    .and().eq("STATE", state)
-                    .and().eq("HAS_CONFIRM", confirm);
             list = qb.query();
         } catch (SQLException e) {
             e.printStackTrace();

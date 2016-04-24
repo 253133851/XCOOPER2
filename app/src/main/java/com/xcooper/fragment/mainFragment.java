@@ -13,11 +13,15 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
+import com.xcooper.Bean.BEAN_INSTANSE;
+import com.xcooper.Common.util.DateUtil;
 import com.xcooper.Constant;
 import com.xcooper.ENV;
 import com.xcooper.Method_Center;
@@ -25,7 +29,9 @@ import com.xcooper.MyAsynctask;
 import com.xcooper.R;
 import com.xcooper.activity.mainActivity;
 import com.xcooper.adapter.MyViewPagerAdapter;
+import com.xcooper.adapter.TaskWfzdAdapter;
 import com.xcooper.view.RevealLayout;
+import com.xcooper.vo.TaskVO;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -54,10 +60,11 @@ public class mainFragment extends MyFragment {
 
     private LayoutInflater mInflater;
     private List<String> mTitleList = new ArrayList<>();//页卡标题集合
-    private View view1, view2, view3, view4, view5;//页卡视图
+    private View view1, view2, view3;//页卡视图
     private List<View> mViewList = new ArrayList<>();//页卡视图集合
-
-    RevealLayout renwu_test_click;
+    SimpleAdapter adapter;
+    public static ListView lv_wfzd_yh, lv_wfzd_jt, lv_wfqd, lv_wgzd;
+    public static TaskWfzdAdapter taskWfzdAdapter_jt, taskWfzdAdapter_yh, taskWfqdAdapter, taskWgzdAdapter;
 
     @Override
     public void Init_View(View view) {
@@ -70,7 +77,10 @@ public class mainFragment extends MyFragment {
         view2 = mInflater.inflate(R.layout.wofaqide, null);
         view3 = mInflater.inflate(R.layout.woguanzude, null);
 
-        renwu_test_click = (RevealLayout) view1.findViewById(R.id.renwu_test_click);
+        lv_wfzd_yh = (ListView) view1.findViewById(R.id.lv_wfzd_yh);
+        lv_wfzd_jt = (ListView) view1.findViewById(R.id.lv_wfzd_jt);
+        lv_wfqd = (ListView) view2.findViewById(R.id.lv_wfqd);
+        lv_wgzd = (ListView) view3.findViewById(R.id.lv_wgzd);
 
         mainActivity.setFloatButtons(3, new int[]{
                 R.drawable.open,
@@ -80,9 +90,6 @@ public class mainFragment extends MyFragment {
                 "返回", "新建任务", "番茄钟"
         });
     }
-
-    SimpleAdapter adapter;
-    List<Map<String, String>> list = new ArrayList<>();
 
     @Override
     public void Init_Data() {
@@ -113,11 +120,66 @@ public class mainFragment extends MyFragment {
         mTabLayout.setupWithViewPager(mViewPager);//将TabLayout和ViewPager关联起来。
         mTabLayout.setTabsFromPagerAdapter(mAdapter);//给Tabs设置适配器
 
+        BEAN_INSTANSE.loadTaskIndexData();
+
+    }
+
+    public static void setLvData() {
+
+        List<Map<String, String>> taskWfzdList_jt = new ArrayList<>();
+        List<Map<String, String>> taskWfzdList_yh = new ArrayList<>();
+        List<Map<String, String>> taskWfqdList = new ArrayList<>();
+        List<Map<String, String>> taskWgzdList = new ArrayList<>();
+
+        List<TaskVO> taskWfzdVos = BEAN_INSTANSE.taskBean.query(TaskVO.task_wfzd);
+        List<TaskVO> taskWfqdVos = BEAN_INSTANSE.taskBean.query(TaskVO.task_wfqd);
+        List<TaskVO> taskWgzdVos = BEAN_INSTANSE.taskBean.query(TaskVO.task_wgzd);
+
+        for (int i = 0; i < taskWfzdVos.size(); i++) {
+            Map<String, String> map = new HashMap<>();
+            if (null != taskWfzdVos.get(i).getEnd_DATETIME() &&
+                    !("").equals(taskWfzdVos.get(i).getEnd_DATETIME()) &&
+                    taskWfzdVos.get(i).getEnd_DATETIME().length() > 10)
+                if (taskWfzdVos.get(i).getEnd_DATETIME().substring(0, 10).equals(DateUtil.getCurrentDay("yyyy-MM-dd"))) {
+                    map.put("date", "今天");
+                    map.put("name", taskWfzdVos.get(i).getTask_NAME());
+                    map.put("xiangmu", taskWfzdVos.get(i).getProject_ID() + "");
+                    taskWfzdList_jt.add(map);
+                } else {
+                    map.put("date", taskWfzdVos.get(i).getEnd_DATETIME());
+                    map.put("name", taskWfzdVos.get(i).getTask_NAME());
+                    map.put("xiangmu", taskWfzdVos.get(i).getProject_ID() + "");
+                    taskWfzdList_yh.add(map);
+                }
+        }
+
+        for (int i = 0; i < taskWfqdVos.size(); i++) {
+            Map<String, String> map = new HashMap<>();
+            map.put("date", taskWfqdVos.get(i).getEnd_DATETIME());
+            map.put("name", taskWfqdVos.get(i).getTask_NAME());
+            map.put("xiangmu", taskWfqdVos.get(i).getProject_ID() + "");
+            taskWfqdList.add(map);
+        }
+
+        for (int i = 0; i < taskWgzdVos.size(); i++) {
+            Map<String, String> map = new HashMap<>();
+            map.put("date", taskWgzdVos.get(i).getEnd_DATETIME());
+            map.put("name", taskWgzdVos.get(i).getTask_NAME());
+            map.put("xiangmu", taskWgzdVos.get(i).getProject_ID() + "");
+            taskWgzdList.add(map);
+        }
+        taskWfzdAdapter_jt = new TaskWfzdAdapter(taskWfzdList_jt, Constant.context);
+        lv_wfzd_jt.setAdapter(taskWfzdAdapter_jt);
+        taskWfzdAdapter_yh = new TaskWfzdAdapter(taskWfzdList_yh, Constant.context);
+        lv_wfzd_yh.setAdapter(taskWfzdAdapter_yh);
+        taskWfqdAdapter = new TaskWfzdAdapter(taskWfqdList, Constant.context);
+        lv_wfqd.setAdapter(taskWfqdAdapter);
+        taskWgzdAdapter = new TaskWfzdAdapter(taskWgzdList, Constant.context);
+        lv_wgzd.setAdapter(taskWgzdAdapter);
     }
 
     @Override
     public void Init_Listener() {
-        addClick(renwu_test_click);
         getFloatButtons(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,13 +192,19 @@ public class mainFragment extends MyFragment {
                 Fragment_Center.loadfanqiezhongXiangqing(Fragment_Center.mainFragment_num);
             }
         });
+        lv_wfzd_jt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Fragment_Center.loadRenwuXiangqing();
+            }
+        });
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.renwu_test_click:
-                Fragment_Center.loadRenwuXiangqing();
+            case 0:
+
                 break;
         }
     }

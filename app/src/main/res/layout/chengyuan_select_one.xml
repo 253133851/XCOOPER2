@@ -61,14 +61,14 @@
             android:padding="12dp">
 
             <TextView
-                android:id="@+id/tv_chengyuan_Add"
+                android:id="@+id/tv_fuzeren_cancel"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1"
                 android:background="@color/main_color_dark"
                 android:gravity="center"
-                android:text="确定"
+                android:text="取消"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
 

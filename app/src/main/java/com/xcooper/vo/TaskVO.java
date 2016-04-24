@@ -7,262 +7,214 @@ import java.sql.Timestamp;
 
 /**
  * 任务VO
+ *
  * @author zdk
- * 2016-03-28 19:34:51
+ *         2016-03-28 19:34:51
  */
 @DatabaseTable(tableName = "task")
-public class TaskVO{
+public class TaskVO {
 
-	//TASK_ID
-	@DatabaseField
-	int TASK_ID;
+    public static final int task_wfqd = 1001;
+    public static final int task_wgzd = 1002;
+    public static final int task_wfzd = 1003;
+    public static final int task_qita = 1004;
 
-	//SERVICE_ID
-	@DatabaseField
-	int SERVICE_ID;
+    //TASK_ID
+    @DatabaseField
+    public int task_ID;
 
-	//PROJECT_ID
-	@DatabaseField
-	int PROJECT_ID;
+    //SERVICE_ID
+    @DatabaseField
+    public int service_ID;
 
-	//LIST_ID
-	@DatabaseField
-	int LIST_ID;
+    //PROJECT_ID
+    @DatabaseField
+    public int project_ID;
 
-	//TASK_NAME
-	@DatabaseField
-	String TASK_NAME;
+    //LIST_ID
+    @DatabaseField
+    public int list_ID;
 
-	//CREATE_ID
-	@DatabaseField
-	int CREATE_ID;
+    //TASK_NAME
+    @DatabaseField
+    public String task_NAME;
 
-	//执行人id
-	@DatabaseField
-	int EXE_ID;
+    //CREATE_ID
+    @DatabaseField
+    public int create_ID;
 
-	//END_DATETIME
-	@DatabaseField
-	Timestamp END_DATETIME;
+    //执行人id
+    @DatabaseField
+    public int exe_ID;
 
-	//TASK_INFO
-	@DatabaseField
-	String TASK_INFO;
+    //END_DATETIME
+    @DatabaseField
+    public String end_DATETIME;
 
-	//IS_DEL
-	@DatabaseField
-	int IS_DEL;
+    //TASK_INFO
+    @DatabaseField
+    public String task_INFO;
 
-	//ADD_DATETIME
-	@DatabaseField
-	Timestamp ADD_DATETIME;
+    //IS_DEL
+    @DatabaseField
+    public int is_DEL;
 
-	//UPDATE_DATETIME
-	@DatabaseField
-	Timestamp UPDATE_DATETIME;
+    //ADD_DATETIME
+    @DatabaseField
+    public String add_DATETIME;
 
-	//DEL_DATETIME
-	@DatabaseField
-	Timestamp DEL_DATETIME;
+    //UPDATE_DATETIME
+    @DatabaseField
+    public String update_DATETIME;
 
-	/**
-	 * @return 返回 TASK_ID TASK_ID
-	 */
-	public int getTASK_ID() {
-		return TASK_ID;
-	}
+    //DEL_DATETIME
+    @DatabaseField
+    public String del_DATETIME;
 
-	/**
-	 * @param TASK_ID 设置 TASK_ID 的值
-	 */
-	public void setTASK_ID(int TASK_ID) {
-		this.TASK_ID = TASK_ID;
-	}
+    //DEL_DATETIME
+    @DatabaseField
+    public int is_focus;
 
-	/**
-	 * @return 返回 SERVICE_ID SERVICE_ID
-	 */
-	public int getSERVICE_ID() {
-		return SERVICE_ID;
-	}
+    //DEL_DATETIME
+    @DatabaseField
+    public int type;
 
-	/**
-	 * @param SERVICE_ID 设置 SERVICE_ID 的值
-	 */
-	public void setSERVICE_ID(int SERVICE_ID) {
-		this.SERVICE_ID = SERVICE_ID;
-	}
+    public int getTask_ID() {
+        return task_ID;
+    }
 
-	/**
-	 * @return 返回 PROJECT_ID PROJECT_ID
-	 */
-	public int getPROJECT_ID() {
-		return PROJECT_ID;
-	}
+    public void setTask_ID(int task_ID) {
+        this.task_ID = task_ID;
+    }
 
-	/**
-	 * @param PROJECT_ID 设置 PROJECT_ID 的值
-	 */
-	public void setPROJECT_ID(int PROJECT_ID) {
-		this.PROJECT_ID = PROJECT_ID;
-	}
+    public int getService_ID() {
+        return service_ID;
+    }
 
-	/**
-	 * @return 返回 LIST_ID LIST_ID
-	 */
-	public int getLIST_ID() {
-		return LIST_ID;
-	}
+    public void setService_ID(int service_ID) {
+        this.service_ID = service_ID;
+    }
 
-	/**
-	 * @param LIST_ID 设置 LIST_ID 的值
-	 */
-	public void setLIST_ID(int LIST_ID) {
-		this.LIST_ID = LIST_ID;
-	}
+    public int getProject_ID() {
+        return project_ID;
+    }
 
-	/**
-	 * @return 返回 TASK_NAME TASK_NAME
-	 */
-	public String getTASK_NAME() {
-		return TASK_NAME;
-	}
+    public void setProject_ID(int project_ID) {
+        this.project_ID = project_ID;
+    }
 
-	/**
-	 * @param TASK_NAME 设置 TASK_NAME 的值
-	 */
-	public void setTASK_NAME(String TASK_NAME) {
-		this.TASK_NAME = TASK_NAME;
-	}
+    public int getList_ID() {
+        return list_ID;
+    }
 
-	/**
-	 * @return 返回 CREATE_ID CREATE_ID
-	 */
-	public int getCREATE_ID() {
-		return CREATE_ID;
-	}
+    public void setList_ID(int list_ID) {
+        this.list_ID = list_ID;
+    }
 
-	/**
-	 * @param CREATE_ID 设置 CREATE_ID 的值
-	 */
-	public void setCREATE_ID(int CREATE_ID) {
-		this.CREATE_ID = CREATE_ID;
-	}
+    public String getTask_NAME() {
+        return task_NAME;
+    }
 
-	/**
-	 * @return 返回 EXE_ID 执行人id
-	 */
-	public int getEXE_ID() {
-		return EXE_ID;
-	}
+    public void setTask_NAME(String task_NAME) {
+        this.task_NAME = task_NAME;
+    }
 
-	/**
-	 * @param EXE_ID 设置 EXE_ID 的值
-	 */
-	public void setEXE_ID(int EXE_ID) {
-		this.EXE_ID = EXE_ID;
-	}
+    public int getCreate_ID() {
+        return create_ID;
+    }
 
-	/**
-	 * @return 返回 END_DATETIME END_DATETIME
-	 */
-	public Timestamp getEND_DATETIME() {
-		return END_DATETIME;
-	}
+    public void setCreate_ID(int create_ID) {
+        this.create_ID = create_ID;
+    }
 
-	/**
-	 * @param END_DATETIME 设置 END_DATETIME 的值
-	 */
-	public void setEND_DATETIME(Timestamp END_DATETIME) {
-		this.END_DATETIME = END_DATETIME;
-	}
+    public int getExe_ID() {
+        return exe_ID;
+    }
 
-	/**
-	 * @return 返回 TASK_INFO TASK_INFO
-	 */
-	public String getTASK_INFO() {
-		return TASK_INFO;
-	}
+    public void setExe_ID(int exe_ID) {
+        this.exe_ID = exe_ID;
+    }
 
-	/**
-	 * @param TASK_INFO 设置 TASK_INFO 的值
-	 */
-	public void setTASK_INFO(String TASK_INFO) {
-		this.TASK_INFO = TASK_INFO;
-	}
+    public String getEnd_DATETIME() {
+        return end_DATETIME;
+    }
 
-	/**
-	 * @return 返回 IS_DEL IS_DEL
-	 */
-	public int getIS_DEL() {
-		return IS_DEL;
-	}
+    public void setEnd_DATETIME(String end_DATETIME) {
+        this.end_DATETIME = end_DATETIME;
+    }
 
-	/**
-	 * @param IS_DEL 设置 IS_DEL 的值
-	 */
-	public void setIS_DEL(int IS_DEL) {
-		this.IS_DEL = IS_DEL;
-	}
+    public String getTask_INFO() {
+        return task_INFO;
+    }
 
-	/**
-	 * @return 返回 ADD_DATETIME ADD_DATETIME
-	 */
-	public Timestamp getADD_DATETIME() {
-		return ADD_DATETIME;
-	}
+    public void setTask_INFO(String task_INFO) {
+        this.task_INFO = task_INFO;
+    }
 
-	/**
-	 * @param ADD_DATETIME 设置 ADD_DATETIME 的值
-	 */
-	public void setADD_DATETIME(Timestamp ADD_DATETIME) {
-		this.ADD_DATETIME = ADD_DATETIME;
-	}
+    public int getIs_DEL() {
+        return is_DEL;
+    }
 
-	/**
-	 * @return 返回 UPDATE_DATETIME UPDATE_DATETIME
-	 */
-	public Timestamp getUPDATE_DATETIME() {
-		return UPDATE_DATETIME;
-	}
+    public void setIs_DEL(int is_DEL) {
+        this.is_DEL = is_DEL;
+    }
 
-	/**
-	 * @param UPDATE_DATETIME 设置 UPDATE_DATETIME 的值
-	 */
-	public void setUPDATE_DATETIME(Timestamp UPDATE_DATETIME) {
-		this.UPDATE_DATETIME = UPDATE_DATETIME;
-	}
+    public String getAdd_DATETIME() {
+        return add_DATETIME;
+    }
 
-	/**
-	 * @return 返回 DEL_DATETIME DEL_DATETIME
-	 */
-	public Timestamp getDEL_DATETIME() {
-		return DEL_DATETIME;
-	}
+    public void setAdd_DATETIME(String add_DATETIME) {
+        this.add_DATETIME = add_DATETIME;
+    }
 
-	/**
-	 * @param DEL_DATETIME 设置 DEL_DATETIME 的值
-	 */
-	public void setDEL_DATETIME(Timestamp DEL_DATETIME) {
-		this.DEL_DATETIME = DEL_DATETIME;
-	}
+    public String getUpdate_DATETIME() {
+        return update_DATETIME;
+    }
 
-	public String toString() {
-		StringBuffer ret = new StringBuffer();
-		ret.append("toString : ");
-		ret.append(", TASK_ID='" + TASK_ID + "'");
-		ret.append(", SERVICE_ID='" + SERVICE_ID + "'");
-		ret.append(", PROJECT_ID='" + PROJECT_ID + "'");
-		ret.append(", LIST_ID='" + LIST_ID + "'");
-		ret.append(", TASK_NAME='" + TASK_NAME + "'");
-		ret.append(", CREATE_ID='" + CREATE_ID + "'");
-		ret.append(", EXE_ID='" + EXE_ID + "'");
-		ret.append(", END_DATETIME='" + END_DATETIME + "'");
-		ret.append(", TASK_INFO='" + TASK_INFO + "'");
-		ret.append(", IS_DEL='" + IS_DEL + "'");
-		ret.append(", ADD_DATETIME='" + ADD_DATETIME + "'");
-		ret.append(", UPDATE_DATETIME='" + UPDATE_DATETIME + "'");
-		ret.append(", DEL_DATETIME='" + DEL_DATETIME + "'");
-		return ret.toString();
-	}
+    public void setUpdate_DATETIME(String update_DATETIME) {
+        this.update_DATETIME = update_DATETIME;
+    }
+
+    public String getDel_DATETIME() {
+        return del_DATETIME;
+    }
+
+    public void setDel_DATETIME(String del_DATETIME) {
+        this.del_DATETIME = del_DATETIME;
+    }
+
+    public int getIs_focus() {
+        return is_focus;
+    }
+
+    public void setIs_focus(int is_focus) {
+        this.is_focus = is_focus;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String toString() {
+        StringBuffer ret = new StringBuffer();
+        ret.append("toString : ");
+        ret.append(", TASK_ID='" + task_ID + "'");
+        ret.append(", SERVICE_ID='" + service_ID + "'");
+        ret.append(", PROJECT_ID='" + project_ID + "'");
+        ret.append(", LIST_ID='" + list_ID + "'");
+        ret.append(", TASK_NAME='" + task_NAME + "'");
+        ret.append(", CREATE_ID='" + create_ID + "'");
+        ret.append(", EXE_ID='" + exe_ID + "'");
+        ret.append(", END_DATETIME='" + end_DATETIME + "'");
+        ret.append(", TASK_INFO='" + task_INFO + "'");
+        ret.append(", IS_DEL='" + is_DEL + "'");
+        ret.append(", ADD_DATETIME='" + add_DATETIME + "'");
+        ret.append(", UPDATE_DATETIME='" + update_DATETIME + "'");
+        ret.append(", DEL_DATETIME='" + del_DATETIME + "'");
+        return ret.toString();
+    }
 }

@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ½ñÈÕ±»»õµ¥µÄÁĞ±íÊÊÅäÆ÷
+ * ä»Šæ—¥è¢«è´§å•çš„åˆ—è¡¨é€‚é…å™¨
  */
-public class XiangmuChengyuanadapter extends MyBaseAdapter {
+public class XiangmuChengyuanAdapter extends MyBaseAdapter {
 
     List<Map<String, String>> list;
     Context context;
 
-    public XiangmuChengyuanadapter(List<Map<String, String>> list, Context context) {
+    public XiangmuChengyuanAdapter(List<Map<String, String>> list, Context context) {
         super(context, list);
         this.context = context;
         this.list = list;
@@ -41,9 +41,9 @@ public class XiangmuChengyuanadapter extends MyBaseAdapter {
         }
 
         Map<String, String> info = list.get(position);
-        //ÉèÖÃ»õÎïµÄÃû³Æ
+        //è®¾ç½®è´§ç‰©çš„åç§°
         holder.name.setText(info.get("name"));
-        //ÉèÖÃ»õÎïµÄÊıÁ¿
+        //è®¾ç½®è´§ç‰©çš„æ•°é‡
 //        holder.img.setImageResource(info.get("img"));
 
         return convertView;
@@ -51,8 +51,8 @@ public class XiangmuChengyuanadapter extends MyBaseAdapter {
 
     class ViewHolder {
 
-        CircleImg img;      //»õÎïÃû³Æ
-        TextView name;     //»õÎïÊıÁ¿
+        CircleImg img;      //è´§ç‰©åç§°
+        TextView name;     //è´§ç‰©æ•°é‡
 
     }
 }

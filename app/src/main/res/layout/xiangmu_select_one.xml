@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:background="@color/main_color_dark"
             android:padding="12dp"
-            android:text="选择成员"
+            android:text="选择项目"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -35,15 +35,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/chengyuan_item3" />
+                <include layout="@layout/xiangmu_item2" />
 
-                <include layout="@layout/chengyuan_item3" />
+                <include layout="@layout/xiangmu_item2" />
 
-                <include layout="@layout/chengyuan_item3" />
+                <include layout="@layout/xiangmu_item2" />
 
-                <include layout="@layout/chengyuan_item3" />
+                <include layout="@layout/xiangmu_item2" />
 
-                <include layout="@layout/chengyuan_item3" />
+                <include layout="@layout/xiangmu_item2" />
 
             </LinearLayout>
         </ScrollView>
@@ -60,7 +60,7 @@
             android:padding="12dp">
 
             <TextView
-                android:id="@+id/tv_chengyuan_Add"
+                android:id="@+id/tv_xiangmu_select"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="16dp"

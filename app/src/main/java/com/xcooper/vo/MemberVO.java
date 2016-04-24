@@ -13,159 +13,111 @@ public class MemberVO{
 
 	//MEMBER_ID
 	@DatabaseField
-	int MEMBER_ID;
+	int member_ID;
 
 	//用户ID
 	@DatabaseField
-	int UID;
+	int uid;
 
 	//SERVICE_ID
 	@DatabaseField
-	int SERVICE_ID;
+	int service_ID;
 
 	//姓名
 	@DatabaseField
-	String NAME;
+	String name;
 
 	//职位
 	@DatabaseField
-	String JOB;
+	String job;
 
 	//手机
 	@DatabaseField
-	String MOBILE;
+	String mobile;
 
 	//邮箱
 	@DatabaseField
-	String EMAIL;
+	String email;
 
 	//QQ
 	@DatabaseField
-	String QQ;
+	String qq;
 
-	/**
-	 * @return 返回 MEMBER_ID MEMBER_ID
-	 */
-	public int getMEMBER_ID() {
-		return MEMBER_ID;
+	public int getMember_ID() {
+		return member_ID;
 	}
 
-	/**
-	 * @param MEMBER_ID 设置 MEMBER_ID 的值
-	 */
-	public void setMEMBER_ID(int MEMBER_ID) {
-		this.MEMBER_ID = MEMBER_ID;
+	public void setMember_ID(int member_ID) {
+		this.member_ID = member_ID;
 	}
 
-	/**
-	 * @return 返回 UID 用户ID
-	 */
-	public int getUID() {
-		return UID;
+	public int getUid() {
+		return uid;
 	}
 
-	/**
-	 * @param UID 设置 UID 的值
-	 */
-	public void setUID(int UID) {
-		this.UID = UID;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 
-	/**
-	 * @return 返回 SERVICE_ID SERVICE_ID
-	 */
-	public int getSERVICE_ID() {
-		return SERVICE_ID;
+	public int getService_ID() {
+		return service_ID;
 	}
 
-	/**
-	 * @param SERVICE_ID 设置 SERVICE_ID 的值
-	 */
-	public void setSERVICE_ID(int SERVICE_ID) {
-		this.SERVICE_ID = SERVICE_ID;
+	public void setService_ID(int service_ID) {
+		this.service_ID = service_ID;
 	}
 
-	/**
-	 * @return 返回 NAME 姓名
-	 */
-	public String getNAME() {
-		return NAME;
+	public String getName() {
+		return name;
 	}
 
-	/**
-	 * @param NAME 设置 NAME 的值
-	 */
-	public void setNAME(String NAME) {
-		this.NAME = NAME;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	/**
-	 * @return 返回 JOB 职位
-	 */
-	public String getJOB() {
-		return JOB;
+	public String getJob() {
+		return job;
 	}
 
-	/**
-	 * @param JOB 设置 JOB 的值
-	 */
-	public void setJOB(String JOB) {
-		this.JOB = JOB;
+	public void setJob(String job) {
+		this.job = job;
 	}
 
-	/**
-	 * @return 返回 MOBILE 手机
-	 */
-	public String getMOBILE() {
-		return MOBILE;
+	public String getMobile() {
+		return mobile;
 	}
 
-	/**
-	 * @param MOBILE 设置 MOBILE 的值
-	 */
-	public void setMOBILE(String MOBILE) {
-		this.MOBILE = MOBILE;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
-	/**
-	 * @return 返回 EMAIL 邮箱
-	 */
-	public String getEMAIL() {
-		return EMAIL;
+	public String getEmail() {
+		return email;
 	}
 
-	/**
-	 * @param EMAIL 设置 EMAIL 的值
-	 */
-	public void setEMAIL(String EMAIL) {
-		this.EMAIL = EMAIL;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	/**
-	 * @return 返回 QQ QQ
-	 */
-	public String getQQ() {
-		return QQ;
+	public String getQq() {
+		return qq;
 	}
 
-	/**
-	 * @param QQ 设置 QQ 的值
-	 */
-	public void setQQ(String QQ) {
-		this.QQ = QQ;
+	public void setQq(String qq) {
+		this.qq = qq;
 	}
 
 	public String toString() {
 		StringBuffer ret = new StringBuffer();
 		ret.append("toString : ");
-		ret.append(", MEMBER_ID='" + MEMBER_ID + "'");
-		ret.append(", UID='" + UID + "'");
-		ret.append(", SERVICE_ID='" + SERVICE_ID + "'");
-		ret.append(", NAME='" + NAME + "'");
-		ret.append(", JOB='" + JOB + "'");
-		ret.append(", MOBILE='" + MOBILE + "'");
-		ret.append(", EMAIL='" + EMAIL + "'");
-		ret.append(", QQ='" + QQ + "'");
+		ret.append(", MEMBER_ID='" + member_ID + "'");
+		ret.append(", UID='" + uid + "'");
+		ret.append(", SERVICE_ID='" + service_ID + "'");
+		ret.append(", NAME='" + name + "'");
+		ret.append(", JOB='" + job + "'");
+		ret.append(", MOBILE='" + mobile + "'");
+		ret.append(", EMAIL='" + email + "'");
+		ret.append(", QQ='" + qq + "'");
 		return ret.toString();
 	}
 }

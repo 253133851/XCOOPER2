@@ -10,7 +10,7 @@ import com.xcooper.vo.UserVO;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.beans.*;
 /**
  * Created by 26901 on 2016.4.17.
  */

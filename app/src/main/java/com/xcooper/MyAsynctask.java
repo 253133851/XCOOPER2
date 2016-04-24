@@ -36,9 +36,7 @@ public class MyAsynctask extends AsyncTask<Void, Void, String> implements OK, Re
 
     @Override
     public void onResponse(String s) {
-        System.out.println(100);
-        System.out.println(s);
-        net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(s);
+        JSONObject json = JSONObject.fromObject(s);
         int code = json.getInt("code");
         switch (code) {
             case Code.OK:
